@@ -1,0 +1,40 @@
+
+$primaryColor: #3fd0d4;
+$secondaryColor: #d43f71;
+$mainWhite: #fff;
+$offWhite: #f7f7f7;
+$mainBlack: #222;
+$mainGrey: #ececec;
+$darkGrey: #cfcfcf;
+$mainTransition: all 0.3s linear;
+$mainSpacing: 4px;
+$lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+$darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+
+:export {
+  primaryColor: $primaryColor;
+  secondaryColor: $secondaryColor;
+  mainWhite: $mainWhite;
+  offWhite: $offWhite;
+  mainBlack: $mainBlack;
+  mainGrey: $mainGrey;
+  darkGrey: $darkGrey;
+  mainTransition: $mainTransition;
+  mainSpacing: $mainSpacing;
+  lightShadow: $lightShadow;
+  darkShadow: $darkShadow;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
