@@ -3,5 +3,9 @@ const ERRORS = {
   CLEAR_ERROR: 'CLEAR_ERROR'
 };
 
+const AUTH = {
+  SIGN_IN: 'SIGN_IN'
+}
 
-export { ERRORS }
+
+export { ERRORS, AUTH }
