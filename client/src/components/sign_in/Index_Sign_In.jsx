@@ -4,10 +4,12 @@ import Input from '../common/input/Input';
 import CustomButton from '../common/button/Custom_Button';
 import Google from '../../assets/svg/Google';
 import FaceBook from '../../assets/svg/FaceBook';
-
-import './indexSignIn.scss';
 import Github from '../../assets/svg/Github';
 import Twitter from '../../assets/svg/Twitter';
+import Logo from '../Logo';
+
+
+import './indexSignIn.scss';
 
 const IndexSignIn = () => {
   const [state, setState] = useState({ 
@@ -30,10 +32,10 @@ const IndexSignIn = () => {
   return (
     <div className='sign-in'>
       <div className='row no-gutters'>
-        <div className='col-5 m-auto'>
+        <div className='col-sm-5 col m-auto'>
           <div className='wrapper'>
-            <div className='logo'>
-              <span>logo</span>
+            <div className='logo-div'>
+              <Logo />
             </div>
             <div className='title'>
               <h1>
