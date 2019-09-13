@@ -4,7 +4,8 @@
   top: 6px;
   left: 12px;
   font-size: 10px;
-  color: $primaryColor;
+  color: $secondaryColor;
+  font-family: 'Lato', sans-serif;
 }
 
 .group {
@@ -38,7 +39,7 @@
   .form-input-label {
     font-weight: 600;
     letter-spacing: .5px;
-    top: 16px;
+    top: 18px;
     left: 12px;
     text-transform: uppercase;
     color: $darkGrey;

@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 
 import Input from '../common/input/Input';
 import CustomButton from '../common/button/Custom_Button';
+import Google from '../../assets/svg/Google';
+import FaceBook from '../../assets/svg/FaceBook';
 
 import './indexSignIn.scss';
+import Github from '../../assets/svg/Github';
+import Twitter from '../../assets/svg/Twitter';
 
 const IndexSignIn = () => {
   const [state, setState] = useState({ 
@@ -56,16 +60,16 @@ const IndexSignIn = () => {
                   <CustomButton  value='Sign in' type='submit' isClass='inverted' />
                 </div>
                 <div className='extern-signIn-form'>
-                  <div>1</div>
-                  <div>2</div>
-                  <div>3</div>
-                  <div>4</div>
+                  <div className='google'><Google width='25px' height='25px' /></div>
+                  <div className='google'><FaceBook width='25px' height='25px' /></div>
+                  <div className='google'><Twitter width='25px' height='25px' /></div>
+                  <div className='google'><Github width='25px' height='25px' /></div>
                 </div>
               </form>
             </div>
           </div>
+        </div>
       </div>
-    </div>
     </div>
   )
 };
