@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 
+import Particles from './components/Particles';
 import Navbar from './layout/navbar/Navbar';
 import Home from './pages/home/Home';
 import SignIn from './pages/sign_In/SignIn';
@@ -13,9 +14,11 @@ import NotFound from './pages/not_Found/NotFound';
 import './app.scss'
 
 const App = () => {
+
   return (
     <Router>
       <div className='app'>
+        <Particles />
         <Navbar />
         <Switch>
           <Route exact path='/' component={Home} />
