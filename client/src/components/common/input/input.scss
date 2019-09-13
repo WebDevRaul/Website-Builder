@@ -1,8 +1,9 @@
 @import '../../../index.scss';
 
 @mixin shrinkLabel {
-  top: -14px;
-  font-size: 14px;
+  top: 6px;
+  left: 12px;
+  font-size: 10px;
   color: $primaryColor;
 }
 
@@ -11,17 +12,15 @@
   margin: 45px 0;
 
   .form-input {
-    background: none;
+    height: 54px;
+    padding: 22px 12px 10px;
     background-color: white;
-    color: $darkGrey;
+    color: $mainBlack;
     font-size: 18px;
-    padding: 10px 10px 10px 5px;
     display: block;
     width: 100%;
-    border: none;
-    border-radius: 0;
-    border-bottom: 1px solid $mainBlack;
-    margin: 25px 0;
+    border: 1px solid $secondaryColor;
+    border-radius: $mainBorderRadius;
 
     &:focus {
       outline: none;
@@ -37,13 +36,15 @@
   }
 
   .form-input-label {
+    font-weight: 600;
+    letter-spacing: .5px;
+    top: 16px;
+    left: 12px;
+    text-transform: uppercase;
     color: $darkGrey;
-    font-size: 16px;
-    font-weight: normal;
+    font-size: 14px;
     position: absolute;
     pointer-events: none;
-    left: 5px;
-    top: 10px;
     transition: $mainTransition;
 
     &.shrink {

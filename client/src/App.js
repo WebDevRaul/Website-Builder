@@ -10,10 +10,12 @@ import Footer from './layout/footer/Footer';
 import Dashboard from './pages/dashboard/Dashboard';
 import NotFound from './pages/not_Found/NotFound';
 
+import './app.scss'
+
 const App = () => {
   return (
     <Router>
-      <div className='App'>
+      <div className='app'>
         <Navbar />
         <Switch>
           <Route exact path='/' component={Home} />

@@ -1,0 +1,38 @@
+@import '../../../index.scss';
+
+.custom-button {
+  font-weight: 600;
+  font-size: 14px;
+  min-width: 125px;
+  width: auto;
+  height: 50px;
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  padding: 0 35px 0 35px;
+  background-color: $primaryColor;
+  color: $mainWhite;
+  text-transform: uppercase;
+  border: none;
+  border-radius: $mainBorderRadius;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    background-color: $mainWhite;
+    color: $mainBlack;
+    border: 1px solid $mainBlack;
+  }
+
+  &.inverted {
+    background-color: $mainWhite;
+    color: $mainBlack;
+    border: 1px solid $mainBlack;
+    
+    &:hover {
+      background-color: $mainBlack;
+      color: $mainWhite;
+      border: none;
+    }
+  }
+}
