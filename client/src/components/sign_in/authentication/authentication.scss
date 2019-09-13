@@ -1,0 +1,31 @@
+@import '../../../index.scss';
+
+.Alternative-login-methods {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: $mainWhite;
+    border: 2px solid $secondaryColor;
+    border-radius: $mainBorderRadius;
+    color: $mainBlack;
+    height: 100%;
+    width: 20%;
+    margin: 20px 0;
+    padding: .5rem 1rem;
+    transition: box-shadow .3s;
+
+    i {
+      font-size: 24px;
+    }
+
+    &:hover {
+      box-shadow: 0 4px 15px $secondaryColor;
+      cursor: pointer;
+    }
+  }
+}

@@ -2,14 +2,12 @@ import React, { useState } from 'react';
 
 import Input from '../common/input/Input';
 import CustomButton from '../common/button/Custom_Button';
-import Google from '../../assets/svg/Google';
-import FaceBook from '../../assets/svg/FaceBook';
-import Github from '../../assets/svg/Github';
-import Twitter from '../../assets/svg/Twitter';
+import Authentication from './authentication/Authentication';
 import Logo from '../Logo';
 
 
 import './indexSignIn.scss';
+import Title from '../common/title/Title';
 
 const IndexSignIn = () => {
   const [state, setState] = useState({ 
@@ -37,11 +35,7 @@ const IndexSignIn = () => {
             <div className='logo-div'>
               <Logo />
             </div>
-            <div className='title'>
-              <h1>
-                <span>Sign In</span>
-              </h1>
-            </div>
+            <Title>Sign In</Title>
             <div className='form'>
               <form onSubmit={onSubmit}>
                 <Input 
@@ -61,12 +55,7 @@ const IndexSignIn = () => {
                 <div className='submit'>
                   <CustomButton  value='Sign in' type='submit' isClass='inverted' />
                 </div>
-                <div className='extern-signIn-form'>
-                  <div className='google'><Google width='25px' height='25px' /></div>
-                  <div className='google'><FaceBook width='25px' height='25px' /></div>
-                  <div className='google'><Twitter width='25px' height='25px' /></div>
-                  <div className='google'><Github width='25px' height='25px' /></div>
-                </div>
+                <Authentication />
               </form>
             </div>
           </div>
