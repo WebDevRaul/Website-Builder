@@ -25,7 +25,7 @@ const IndexRegister = () => {
   }
   return (
     <Wrapper name='register' title='Register'>
-      <div className='form'>
+      <div className='form mb-4'>
         <form onSubmit={onSubmit}>
           <Input 
             name='name'

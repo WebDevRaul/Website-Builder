@@ -11,7 +11,7 @@ const options = {
 }
 
 const Particle = () => (
-  <Particles className='particles bg-primary' params={ options } />
+  <Particles className='particles' params={ options } />
 )
 
 export default Particle;
