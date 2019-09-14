@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import validateSignIn from '../utils/validator/signIn';
+import isEmpty from '../utils/isEmpty/isEmpty';
 import Input from '../common/input/Input';
 import CustomButton from '../common/button/Custom_Button';
 import Authentication from './authentication/Authentication';
@@ -24,6 +25,12 @@ const IndexSignIn = () => {
     setState({...state , [e.target.name]: e.target.value })
   };
 
+  const onFocus = e => {
+    const field = Object.keys(error).filter(i => { return i === e.target.name })[0];
+    console.log(field)
+    //  setErrors({ ...error, [field]: undefined });
+  }
+
   const onSubmit = e => {
     e.preventDefault();
     const data = { email, password };
@@ -39,13 +46,14 @@ const IndexSignIn = () => {
 
   return (
     <Wrapper name='sign-in' title='Sign In'>
-      {console.log(error), 'rendered'}
       <div className='form'>
+      {console.log(error)}
         <form onSubmit={onSubmit} noValidate>
           <Input 
             name='email'
             value={email}
             onChange={onChange}
+            onFocus={onFocus}
             type='email'
             label='email'
           />
@@ -53,6 +61,7 @@ const IndexSignIn = () => {
             name='password'
             value={password}
             onChange={onChange}
+            onFocus={onFocus}
             type='password'
             label='password'
           />

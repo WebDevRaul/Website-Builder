@@ -7,13 +7,14 @@ import isEmpty from '../../utils/isEmpty/isEmpty';
 // Scss
 import './input.scss';
 
-const Input = ({ name, value, onChange, type, label }) => (
+const Input = ({ name, value, onChange, onFocus, type, label }) => (
   <div className='group'>
     <input 
       className='form-input'
       name={name}
       value={value}
       onChange={onChange}
+      onFocus={onFocus}
       type={type}
       autoComplete='true'
       required
@@ -32,6 +33,7 @@ Input.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  onFocus: PropTypes.func.isRequired,
   type: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired
 }
