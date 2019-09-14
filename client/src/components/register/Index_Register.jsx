@@ -49,10 +49,10 @@ const IndexRegister = () => {
             label='password'
           />
           <Input 
-            name='password'
-            value={password}
+            name='password2'
+            value={password2}
             onChange={onChange}
-            type='password'
+            type='password2'
             label='confirm password'
           />
           <div className='submit'>

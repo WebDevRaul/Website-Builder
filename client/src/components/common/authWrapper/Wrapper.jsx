@@ -9,7 +9,7 @@ import './wrapper.scss';
 const Wrapper = ({ children, name, title }) => (
   <div className={name}>
     <div className='row no-gutters'>
-      <div className='col-sm-5 col m-auto'>
+      <div className='col-sm-12 col-md-10 col m-auto'>
         <div className='wrapper'>
           <div className='logo-div'>
             <Logo />
