@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import isEmpty from '../../utils/isEmpty/isEmpty';
+import Label from './Label';
 
 // Scss
 import './input.scss';
 
-const Input = ({ name, value, onChange, onFocus, type, label }) => (
+const Input = ({ name, value, onChange, onFocus, type, label, error }) => (
   <div className='group'>
     <input 
-      className='form-input'
+      className={classnames('form-input', {'validate' : error})}
       name={name}
       value={value}
       onChange={onChange}
@@ -20,11 +21,8 @@ const Input = ({ name, value, onChange, onFocus, type, label }) => (
       required
     />
       {
-        !isEmpty(label) ? 
-        <label className={classnames('form-input-label', { 'shrink': value })}>
-          {label.charAt(0).toUpperCase() + label.slice(1)}
-        </label>
-        : null 
+        !isEmpty(error) ? <Label name={error} value={value} /> : 
+        !isEmpty(label) ? <Label name={label} value={value} /> : null 
       }
   </div>
 );

@@ -52,4 +52,10 @@
       @include shrinkLabel();
     }
   }
+  .validate {
+    border-color: $validate;
+  }
+  .validate + .form-input-label {
+    color: $validate;
+  }
 }
