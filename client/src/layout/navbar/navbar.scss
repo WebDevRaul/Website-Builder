@@ -1,8 +1,8 @@
 @import '../../index.scss';
 
 .navbar {
-  
-  .wrapper {
+
+  .nav-wrapper {
     width: 100%;
 
     .nav-header {
@@ -78,7 +78,7 @@
 @media screen and (min-width: 992px) {
   .navbar {
 
-    .wrapper {
+    .nav-wrapper {
       margin: 0 auto;
       display: flex;
       justify-content: space-between;

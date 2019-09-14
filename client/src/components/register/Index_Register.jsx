@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 
+import Wrapper from '../common/authWrapper/Wrapper';
 import Input from '../common/input/Input';
 import CustomButton from '../common/button/Custom_Button';
-import Authentication from './authentication/Authentication';
-import Wrapper from '../common/authWrapper/Wrapper';
 
+import './indexRegister.scss';
 
-import './indexSignIn.scss';
-
-const IndexSignIn = () => {
+const IndexRegister = () => {
   const [state, setState] = useState({ 
+    name: '',
     email: '',
-    password: ''
+    password: '',
+    password2: ''
   });
 
-  const { email, password } = state;
+  const { name, email, password, password2 } = state;
 
   const onChange = e => {
     setState({...state , [e.target.name]: e.target.value })
@@ -22,14 +22,18 @@ const IndexSignIn = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-
-    console.log(email, password)
   }
-
   return (
-    <Wrapper name='sign-in' title='Sign In'>
+    <Wrapper name='register' title='Register'>
       <div className='form'>
         <form onSubmit={onSubmit}>
+          <Input 
+            name='name'
+            value={name}
+            onChange={onChange}
+            type='text'
+            label='name'
+          />
           <Input 
             name='email'
             value={email}
@@ -44,14 +48,20 @@ const IndexSignIn = () => {
             type='password'
             label='password'
           />
+          <Input 
+            name='password'
+            value={password}
+            onChange={onChange}
+            type='password'
+            label='confirm password'
+          />
           <div className='submit'>
-            <CustomButton  value='Sign in' type='submit' isClass='inverted' />
+            <CustomButton  value='Register' type='submit' isClass='inverted' />
           </div>
-          <Authentication />
         </form>
       </div>
     </Wrapper>
   )
-};
+}
 
-export default IndexSignIn;
+export default IndexRegister;

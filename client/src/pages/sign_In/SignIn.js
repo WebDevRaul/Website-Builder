@@ -6,7 +6,9 @@ const SignIn = () => (
   <div className='container'>
     <div className='row no-gutters'>
       <div className='col'>
-        <IndexSignIn />
+        <div style={{ paddingRight: '17px' }}>
+          <IndexSignIn />
+        </div>
       </div>
     </div>
   </div>

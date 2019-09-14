@@ -26,7 +26,7 @@ const Navbar = () => {
 
   return (
     <nav className='navbar'>
-      <div className='wrapper'>
+      <div className='nav-wrapper'>
         <div className='nav-header'>
           <div>logo</div>
           <button type='button' className='logo-btn' onClick={toggle}>
