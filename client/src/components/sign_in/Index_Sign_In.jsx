@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import validateSignIn from '../utils/validator/signIn';
 import Input from '../common/input/Input';
 import CustomButton from '../common/button/Custom_Button';
 import Authentication from './authentication/Authentication';
@@ -13,7 +14,10 @@ const IndexSignIn = () => {
     email: '',
     password: ''
   });
-
+  const [ error, setErrors ] = useState({
+    email: undefined,
+    password: undefined
+  });
   const { email, password } = state;
 
   const onChange = e => {
@@ -22,14 +26,22 @@ const IndexSignIn = () => {
 
   const onSubmit = e => {
     e.preventDefault();
+    const data = { email, password };
+    const { errors, isValid } = validateSignIn(data);
 
-    console.log(email, password)
+    if(!isValid) {
+      setErrors({ ...error, ...errors })
+    } 
+    else {
+      // submit the form
+    }
   }
 
   return (
     <Wrapper name='sign-in' title='Sign In'>
+      {console.log(error), 'rendered'}
       <div className='form'>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} noValidate>
           <Input 
             name='email'
             value={email}
