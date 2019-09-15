@@ -4,17 +4,6 @@ import { Link } from 'react-router-dom';
 
 import './navbar.scss';
 
-const authLinks = (
-  <li><Link to='/dashboard'>Dashboard</Link></li>
-);
-
-const guestLinks = (
-  <>
-    <li ><Link to='/sign-in'>Sign In</Link></li>
-    <li ><Link to='register'>Register</Link></li>
-  </>
-);
-
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
   const guest  = false;
@@ -22,6 +11,24 @@ const Navbar = () => {
   const toggle = () => {
     setOpen(isOpen => !isOpen);
   };
+
+  const onClick = () => {
+    if (isOpen) {
+      setOpen(isOpen => !isOpen);
+      console.log('tsst')
+    }
+  }
+
+  const authLinks = (
+    <li><Link to='/dashboard' onClick={onClick}>Dashboard</Link></li>
+  );
+  
+  const guestLinks = (
+    <>
+      <li ><Link to='/sign-in' onClick={onClick}>Sign In</Link></li>
+      <li ><Link to='register' onClick={onClick}>Register</Link></li>
+    </>
+  );
 
 
   return (
@@ -35,8 +42,8 @@ const Navbar = () => {
             <i></i>
           </button>
         </div>
-        <ul className={classnames('nav-links', {[guest ? 'show-nav-1' : 'show-nav-2'] : !isOpen})} >
-          <li ><Link to='/'>Home</Link></li>
+        <ul className={classnames('nav-links', {[guest ? 'show-nav-1' : 'show-nav-2'] : isOpen})} >
+          <li ><Link to='/' onClick={onClick}>Home</Link></li>
           {guest ? authLinks : guestLinks}
         </ul>
       </div>
