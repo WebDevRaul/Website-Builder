@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  padding-right: 19px;
 
   .form {
 
@@ -11,5 +12,11 @@
       display: flex;
       flex-direction: column;
     }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .sign-in {
+    padding-right: 0px;
   }
 }
