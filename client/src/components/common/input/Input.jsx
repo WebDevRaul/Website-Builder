@@ -27,16 +27,13 @@ const Input = ({ name, value, onChange, onFocus, type, label, error }) => (
   </div>
 );
 
-Input.defaultProps = {
-  type: PropTypes.string
-}
-
 Input.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   onFocus: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired
 }
 
 export default Input;

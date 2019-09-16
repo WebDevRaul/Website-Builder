@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Input from '../input/Input';
 
-const Field = ({ edit, name, label, type, onFocus, error, data }) => {
-  const [state, setState] = useState(undefined);
+const Field = ({ edit, name, label, onFocus, error, data, type }) => {
+  const [state, setState] = useState('');
 
   useEffect(() => {
     setState(data)
-  },[data])
+  }, [data])
 
   const onChange = e => {
     setState(e.target.value)
@@ -17,15 +17,21 @@ const Field = ({ edit, name, label, type, onFocus, error, data }) => {
     <div className='field'>
       {
         edit ? 
-        <Input name={name} value={state} onChange={onChange} onFocus={onFocus} error={error} type={type} label={label} /> :
+        <Input name={name} value={state} onChange={onChange} onFocus={onFocus} error={error} label={label} type={type} /> :
         <p>{data}</p>
       }
     </div>
   );
 }
+
 Field.propTypes = {
-  data: PropTypes.object.isRequired,
-  edit: PropTypes.bool.isRequired
+  edit: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  onFocus: PropTypes.func.isRequired,
+  error: PropTypes.string.isRequired,
+  data: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired
 };
 
 export default Field;
