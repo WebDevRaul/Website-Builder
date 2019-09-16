@@ -1,0 +1,8 @@
+@import '../../index.scss';
+
+.dashboard {
+  min-height: calc(100vh - 102px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

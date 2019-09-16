@@ -4,7 +4,9 @@ import validateSignIn from '../utils/validator/signIn';
 import Input from '../common/input/Input';
 import CustomButton from '../common/button/Custom_Button';
 import Authentication from './authentication/Authentication';
-import Wrapper from '../common/authWrapper/Wrapper';
+import Responsive from '../common/authWrapper/Responsive';
+import Logo from '../common/logo/Logo';
+import Title from '../common/title/Title';
 
 
 import './indexSignIn.scss';
@@ -46,34 +48,38 @@ const IndexSignIn = () => {
   }
 
   return (
-    <Wrapper name='sign-in' title='Sign In'>
-      <div className='form'>
-        <form onSubmit={onSubmit} noValidate>
-          <Input 
-            name='email'
-            value={email}
-            onChange={onChange}
-            onFocus={onFocus}
-            type='email'
-            label='email'
-            error={error.email}
-          />
-          <Input 
-            name='password'
-            value={password}
-            onChange={onChange}
-            onFocus={onFocus}
-            type='password'
-            label='password'
-            error={error.password}
-          />
-          <div className='submit'>
-            <CustomButton  value='Sign in' type='submit' isClass='inverted' />
-          </div>
-          <Authentication />
-        </form>
-      </div>
-    </Wrapper>
+    <div className='sign-in'>
+      <Responsive>
+        <Logo wrapper={true} />
+        <Title title='Sign In' />
+        <div className='form'>
+          <form onSubmit={onSubmit} noValidate>
+            <Input 
+              name='email'
+              value={email}
+              onChange={onChange}
+              onFocus={onFocus}
+              type='email'
+              label='email'
+              error={error.email}
+            />
+            <Input 
+              name='password'
+              value={password}
+              onChange={onChange}
+              onFocus={onFocus}
+              type='password'
+              label='password'
+              error={error.password}
+            />
+            <div className='submit'>
+              <CustomButton  value='Sign in' type='submit' isClass='inverted' />
+            </div>
+            <Authentication />
+          </form>
+        </div>
+      </Responsive>
+    </div>
   )
 };
 
