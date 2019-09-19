@@ -4,10 +4,16 @@ import classnames from 'classnames';
 import isEmpty from '../utils/isEmpty/isEmpty';
 
 import Responsive from '../common/authWrapper/Responsive';
-import Title from '../common/title/Title';
 import CustomButton from '../common/button/Custom_Button';
+import Credentials from './credentials/Credentials';
+import Title from '../common/title/Title';
+import Photo from './photo/Photo';
+import logo from '../../assets/img/questionMark.jpg'
 
 import './indexDashboard.scss';
+
+const name='John Doe';
+const email='JohnDoe@gmail.com'
 
 const IndexDashboard = () => {
   const [error, setErrors] = useState('');
@@ -29,13 +35,12 @@ const IndexDashboard = () => {
   return (
     <div className='dashboard'>
       <Responsive>
-        <div className='img'>img</div>
-        <Title title='Profile' />
-        <p>name</p>
-        <p>Email</p>
+        <Title title={name} />
+        <Photo photo={logo} />
+        <Credentials name='email' data={email} />
         <form className='form-message'>
           <div className='textarea'>
-            <Textarea minRows={3} name='textarea' onChange={e => onChange(e)}/>
+            <Textarea minRows={3} name='textarea' onChange={e => onChange(e)} />
             <span className={classnames('textarea-label', {'shrink': !isEmpty(textarea)})}>enter message</span>
           </div>
           <div className='submit' onClick={onClick}>
