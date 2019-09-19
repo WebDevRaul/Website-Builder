@@ -1,5 +1,13 @@
 @import '../../index.scss';
 
+@mixin shrinkLabel {
+  top: 6px;
+  left: 12px;
+  font-size: 10px;
+  color: $secondaryColor;
+  font-family: 'Lato', sans-serif;
+}
+
 .dashboard {
   min-height: calc(100vh - 102px);
   display: flex;
@@ -8,7 +16,46 @@
 
   .form-message {
     padding-bottom: 24px;
-    
+
+    .textarea {
+      padding: 30px 0;
+      position: relative;
+
+      textarea {
+        padding: 10px;
+        background-color: white;
+        color: $mainBlack;
+        font-size: 18px;
+        width: 100%;
+        border: 1px solid $secondaryColor;
+        border-radius: $mainBorderRadius;
+        overflow-y: hidden; 
+  
+        &:focus {
+          outline: none;
+        }
+        &:focus ~ .textarea-label {
+          @include shrinkLabel();
+        }
+      }
+      .textarea-label {
+        position: absolute;
+        top: 45px;
+        left: 15px;
+        color: $darkGrey;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: .5px;
+        pointer-events: none;
+        transition: $mainTransition;
+      }
+
+      .shrink {
+        @include shrinkLabel();
+      }
+    }
+
     .submit {
       display: flex;
       flex-direction: column;
