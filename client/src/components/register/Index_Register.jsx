@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { register } from '../../redux/actions/authentication';
 
 import validateRegister from '../utils/validator/register';
 import Input from '../common/input/Input';
 import CustomButton from '../common/button/Custom_Button';
 import Responsive from '../common/authWrapper/Responsive';
 import Title from '../common/title/Title';
-import Logo from '../common/logo/Logo';
 
+import Logo from '../common/logo/Logo';
 import './indexRegister.scss';
 
-const IndexRegister = () => {
+const IndexRegister = ({ register, history }) => {
   const [state, setState] = useState({ 
     name: '',
     email: '',
@@ -46,7 +50,7 @@ const IndexRegister = () => {
       setErrors({ ...error, ...errors });
     } 
     else {
-      // submit the form
+      register(data, history);
     }
   }
   return (
@@ -100,6 +104,11 @@ const IndexRegister = () => {
       </Responsive>
     </div>
   )
-}
+};
 
-export default IndexRegister;
+IndexRegister.propTypes = {
+  register: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired
+};
+
+export default connect(null, { register })(withRouter(IndexRegister));

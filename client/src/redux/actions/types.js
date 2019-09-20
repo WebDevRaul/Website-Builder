@@ -3,9 +3,14 @@ const ERRORS = {
   CLEAR_ERROR: 'CLEAR_ERROR'
 };
 
+const ACCOUNT = {
+  REGISTER_USER: 'REGISTER_USER',
+  SIGN_IN_USER: 'SIGN_IN_USER'
+};
+
 const AUTH = {
   SIGN_IN: 'SIGN_IN'
 }
 
 
-export { ERRORS, AUTH }
+export { ERRORS, AUTH, ACCOUNT }
