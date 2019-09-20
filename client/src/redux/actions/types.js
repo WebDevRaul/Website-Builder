@@ -8,9 +8,4 @@ const ACCOUNT = {
   SIGN_IN_USER: 'SIGN_IN_USER'
 };
 
-const AUTH = {
-  SIGN_IN: 'SIGN_IN'
-}
-
-
-export { ERRORS, AUTH, ACCOUNT }
+export { ERRORS, ACCOUNT }

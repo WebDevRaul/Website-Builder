@@ -7,7 +7,7 @@ const initialState = {
       name: '',
       email: '',
     },
-    isAuth: false,
+    isAuth: true,
     newUser: false
   }
 };
