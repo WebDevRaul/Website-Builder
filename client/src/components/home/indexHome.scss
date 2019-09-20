@@ -6,6 +6,9 @@
   justify-content: center;
 
   .title {
+    border-bottom: 2px solid $mainBlack;
+    width: 80%;
+    margin: 0 auto;
 
     h1 {
       margin: 0px;

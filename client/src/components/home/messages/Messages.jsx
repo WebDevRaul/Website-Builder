@@ -1,8 +1,10 @@
 import React from 'react';
+
 import Responsive from '../../common/authWrapper/Responsive';
+import Post from './post/Post';
+
 
 import './messages.scss';
-import Post from './post/Post';
 
 const logo = require('../../../assets/img/questionMark.jpg');
 const name = 'Jhon Snow';
