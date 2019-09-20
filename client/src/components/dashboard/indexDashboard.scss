@@ -14,6 +14,14 @@
   flex-direction: column;
   justify-content: center;
 
+  .title {
+    padding-top: 0px;
+
+    h1 {
+      margin-bottom: 0px;  
+    }
+  }
+
   .form-message {
     padding-bottom: 24px;
 
@@ -65,6 +73,14 @@
       .custom-button {
         font-size: 16px;
       }
+    }
+    .validate {
+      textarea {
+        border-color: $validate !important;
+      }
+    }
+    .validate > .textarea-label {
+      color: $validate !important;
     }
   }
 }

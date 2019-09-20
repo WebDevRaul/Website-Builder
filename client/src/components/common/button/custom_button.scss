@@ -18,6 +18,10 @@
   display: flex;
   justify-content: center;
 
+  &:focus {
+    outline: none;
+  }
+
   &:hover {
     background-color: $mainWhite;
     color: $mainBlack;

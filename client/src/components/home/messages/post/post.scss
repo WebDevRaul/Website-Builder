@@ -1,0 +1,18 @@
+@import '../../../../index.scss';
+
+.post {
+  border: 1px solid $secondaryColor;
+  display: flex;
+  position: relative;
+  margin: 20px 0;
+
+  .img {
+    position: absolute;
+    top: -25px;
+    left: -40px;
+
+    img {
+      border-radius: 50px;
+    }
+  }
+}

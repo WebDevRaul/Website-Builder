@@ -8,19 +8,24 @@ import CustomButton from '../common/button/Custom_Button';
 import Credentials from './credentials/Credentials';
 import Title from '../common/title/Title';
 import Photo from './photo/Photo';
-import logo from '../../assets/img/questionMark.jpg'
 
 import './indexDashboard.scss';
 
+import logo from '../../assets/img/questionMark.jpg'
 const name='John Doe';
 const email='JohnDoe@gmail.com'
 
 const IndexDashboard = () => {
-  const [error, setErrors] = useState('');
+  const [state, setState] = useState({
+    label: 'enter message',
+    error: false
+  });
   const [textarea, setTextarea] = useState(undefined);
 
-  const onFocus = () => {
+  const { error, label } = state;
 
+  const onFocus = () => {
+    if(error) return setState({ error: false, label: 'enter message' })
   };
 
   const onChange = e => {
@@ -29,7 +34,11 @@ const IndexDashboard = () => {
 
   const onClick = e => {
     e.preventDefault();
-    console.log(textarea)
+    if (isEmpty(textarea)) {
+      setState({ error: true, label:'Textarea field is required!'});
+    } else {
+      console.log(textarea)
+    }
   };
 
   return (
@@ -39,9 +48,9 @@ const IndexDashboard = () => {
         <Photo photo={logo} />
         <Credentials name='email' data={email} />
         <form className='form-message'>
-          <div className='textarea'>
-            <Textarea minRows={3} name='textarea' onChange={e => onChange(e)} />
-            <span className={classnames('textarea-label', {'shrink': !isEmpty(textarea)})}>enter message</span>
+          <div className={classnames('textarea', {'validate': error})}>
+            <Textarea minRows={3} name='textarea' onChange={e => onChange(e)} onFocus={onFocus} />
+            <span className={classnames('textarea-label', {'shrink': !isEmpty(textarea)})}>{label}</span>
           </div>
           <div className='submit' onClick={onClick}>
             <CustomButton value='submit' isClass='inverted' />

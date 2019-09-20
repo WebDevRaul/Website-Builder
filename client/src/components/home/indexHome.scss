@@ -3,15 +3,13 @@
 .home {
   min-height: calc(100vh - 102px);
   display: flex;
-  flex-direction: column;
   justify-content: center;
 
   .title {
-    padding-top: 0px;
 
     h1 {
       margin: 0px;
-      font-size: 4em;
+      font-size: 3em;
     }
   }
 }
