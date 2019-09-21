@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { select_account_isAuth, select_account_newUser } from '../../redux/selectors/account';
+import { select_account_isAuth } from '../../redux/selectors/account';
 import { signIn } from '../../redux/actions/authentication';
 import validateSignIn from '../utils/validator/signIn';
 
@@ -18,7 +18,7 @@ import Alert from '../common/alert/Alert';
 
 import './indexSignIn.scss';
 
-const IndexSignIn = ({ signIn, isAuth, history, newUser }) => {
+const IndexSignIn = ({ signIn, isAuth, history }) => {
   const [state, setState] = useState({ 
     email: '',
     password: ''
@@ -98,13 +98,11 @@ const IndexSignIn = ({ signIn, isAuth, history, newUser }) => {
 
 IndexSignIn.propTypes = {
   signIn: PropTypes.func.isRequired,
-  isAuth: PropTypes.bool.isRequired,
-  newUser: PropTypes.bool.isRequired
+  isAuth: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = createStructuredSelector({
   isAuth: select_account_isAuth,
-  newUser: select_account_newUser
 });
 
 export default connect(mapStateToProps, { signIn })(withRouter(IndexSignIn));

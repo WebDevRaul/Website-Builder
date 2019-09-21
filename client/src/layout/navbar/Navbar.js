@@ -15,7 +15,6 @@ const Navbar = () => {
   const onClick = () => {
     if (isOpen) {
       setOpen(isOpen => !isOpen);
-      console.log('tsst')
     }
   }
 

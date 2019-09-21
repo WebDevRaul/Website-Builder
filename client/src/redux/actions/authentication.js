@@ -1,4 +1,4 @@
-import { ACCOUNT } from './types';
+import { ACCOUNT, ALERT } from './types';
 // import axios from 'axios';
 // import URL from '../../utils/URL';
 
@@ -8,6 +8,12 @@ export const register = (data, history) => dispatch => {
     payload: true
   })
   history.push('/sign-in')
+};
+
+export const alert = () => {
+  return { 
+    type: ALERT.SHOW_MESSAGE
+  };
 };
 
 export const signIn = data => dispatch => {

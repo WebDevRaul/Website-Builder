@@ -8,4 +8,8 @@ const ACCOUNT = {
   SIGN_IN_USER: 'SIGN_IN_USER'
 };
 
-export { ERRORS, ACCOUNT }
+const ALERT = {
+  SHOW_MESSAGE: 'SHOW_MESSAGE'
+}
+
+export { ERRORS, ACCOUNT, ALERT }

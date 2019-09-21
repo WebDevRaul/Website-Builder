@@ -1,4 +1,4 @@
-import { ACCOUNT } from '../actions/types';
+import { ACCOUNT, ALERT } from '../actions/types';
 
 const initialState = {
   account: {
@@ -17,6 +17,10 @@ const account = (state=initialState, action) => {
     case ACCOUNT.REGISTER_USER:
       return {
         account: {...state.account, newUser: action.payload}
+      }
+    case ALERT.SHOW_MESSAGE:
+      return {
+        account: {...state.account, newUser: false}
       }
     case ACCOUNT.SIGN_IN_USER:
       return {
