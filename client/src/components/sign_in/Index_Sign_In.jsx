@@ -13,6 +13,7 @@ import Authentication from './authentication/Authentication';
 import Responsive from '../common/authWrapper/Responsive';
 import Logo from '../common/logo/Logo';
 import Title from '../common/title/Title';
+import Alert from '../common/alert/Alert';
 
 
 import './indexSignIn.scss';
@@ -60,6 +61,7 @@ const IndexSignIn = ({ signIn, isAuth, history, newUser }) => {
 
   return (
     <div className='sign-in'>
+      <Alert />
       <Responsive>
         <Logo wrapper={true} />
         <Title title='Sign In' />

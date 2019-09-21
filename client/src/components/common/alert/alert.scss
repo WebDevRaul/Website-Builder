@@ -1,0 +1,23 @@
+@import '../../../index.scss';
+
+.alert {
+  color: $primaryColor;
+  background-color: $backgroundColor;
+  border-color: $darkGrey;
+  z-index: 10;
+  width: 440px;
+  margin: 0 auto;
+  text-align: center;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@media screen and (max-width: 481px) {
+  .alert {
+    width: 95%;
+    font-size: 0.9rem;
+    padding: .5rem;
+  }
+}

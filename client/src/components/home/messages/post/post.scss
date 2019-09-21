@@ -1,7 +1,7 @@
 @import '../../../../index.scss';
 
 .post {
-  background-color: $mainGrey;
+  background-color: $backgroundColor;
   border-radius: $mainBorderRadius;
   margin: 10px 0;
   display: flex;
@@ -18,11 +18,10 @@
       width: 75px;
       height: 75px;	
       border-radius: 50%;	
-      background: $secondaryColor;
     }
     .name {
       text-align: center;
-      color: $secondaryColor;
+      color: $primaryColor;
     }
   }
   .body {
