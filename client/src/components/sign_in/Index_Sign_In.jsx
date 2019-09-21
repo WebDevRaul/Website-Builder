@@ -1,6 +1,12 @@
-import React, { useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { select_account_isAuth, select_account_newUser } from '../../redux/selectors/account';
+import { signIn } from '../../redux/actions/authentication';
 import validateSignIn from '../utils/validator/signIn';
+
 import Input from '../common/input/Input';
 import CustomButton from '../common/button/Custom_Button';
 import Authentication from './authentication/Authentication';
@@ -11,7 +17,7 @@ import Title from '../common/title/Title';
 
 import './indexSignIn.scss';
 
-const IndexSignIn = () => {
+const IndexSignIn = ({ signIn, isAuth, history, newUser }) => {
   const [state, setState] = useState({ 
     email: '',
     password: ''
@@ -21,6 +27,11 @@ const IndexSignIn = () => {
     password: undefined
   });
   const { email, password } = state;
+
+  // Redirect on Sign in
+  useEffect(() => {
+    if(isAuth) return history.push('/dashboard');
+  }, [isAuth, history]);
 
   const onChange = e => {
     setState({...state , [e.target.name]: e.target.value })
@@ -43,7 +54,7 @@ const IndexSignIn = () => {
       setErrors({ ...error, ...errors });
     } 
     else {
-      // submit the form
+      signIn(data)
     }
   }
 
@@ -83,4 +94,15 @@ const IndexSignIn = () => {
   )
 };
 
-export default IndexSignIn;
+IndexSignIn.propTypes = {
+  signIn: PropTypes.func.isRequired,
+  isAuth: PropTypes.bool.isRequired,
+  newUser: PropTypes.bool.isRequired
+};
+
+const mapStateToProps = createStructuredSelector({
+  isAuth: select_account_isAuth,
+  newUser: select_account_newUser
+});
+
+export default connect(mapStateToProps, { signIn })(withRouter(IndexSignIn));

@@ -1,17 +1,25 @@
-import { ERRORS, ACCOUNT } from './types';
-import axios from 'axios';
-import URL from '../../utils/URL';
+import { ACCOUNT } from './types';
+// import axios from 'axios';
+// import URL from '../../utils/URL';
 
 export const register = (data, history) => dispatch => {
-  axios
-    .post(`${URL.account}/register`, data)
-    .then(res => dispatch({
-      type: ACCOUNT.REGISTER_USER,
-      payload: true
-    }))
-    .then(() => history.push('/sign-in'))
-    .catch(err => dispatch({
-      type: ERRORS.ERROR,
-      payload: err
-    }));
+  dispatch({
+    type: ACCOUNT.REGISTER_USER,
+    payload: true
+  })
+  history.push('/sign-in')
 };
+
+export const signIn = data => dispatch => {
+  dispatch({
+    type: ACCOUNT.SIGN_IN_USER,
+    payload: {
+      user: {
+        id: '1',
+        name: 'Jhon Snow',
+        email: 'JhonSnow@gmail.com',
+      },
+      isAuth: true,
+    }
+  })
+}

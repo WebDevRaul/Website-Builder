@@ -2,12 +2,12 @@ import { ACCOUNT } from '../actions/types';
 
 const initialState = {
   account: {
-    user: {
+    userData: {
       id: '',
       name: '',
       email: '',
     },
-    isAuth: true,
+    isAuth: false,
     newUser: false
   }
 };
@@ -16,7 +16,11 @@ const account = (state=initialState, action) => {
   switch(action.type) {
     case ACCOUNT.REGISTER_USER:
       return {
-        account: {...account, newUser: action.payload}
+        account: {...state.account, newUser: action.payload}
+      }
+    case ACCOUNT.SIGN_IN_USER:
+      return {
+        account: { ...state.account, userDAta: action.payload.user, isAuth: action.payload.isAuth }
       }
     default:
       return state;
