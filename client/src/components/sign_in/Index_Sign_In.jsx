@@ -61,8 +61,8 @@ const IndexSignIn = ({ signIn, isAuth, history }) => {
 
   return (
     <div className='sign-in'>
-      <Alert />
       <Responsive>
+        <Alert />
         <Logo wrapper={true} />
         <Title title='Sign In' />
         <div className='form'>

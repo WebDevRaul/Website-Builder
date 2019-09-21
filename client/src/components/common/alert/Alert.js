@@ -14,11 +14,11 @@ const Alert = ({ show, alert }) => {
   },[alert, show]);
 
   if(show) {
-    return (
-      <div className='alert'>
-          You have successfully registered!
-      </div>
-      )
+  return (
+    <div className='alert'>
+        You have successfully registered!
+    </div>
+    )
   } else {
     return null
   }
