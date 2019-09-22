@@ -4,6 +4,7 @@ import storage from 'redux-persist/lib/storage';
 
 import errors from './errors';
 import account from './authentication';
+import dashboard from './dashboard';
 
 const persistConfig = {
   key: 'root',
@@ -14,7 +15,8 @@ const persistConfig = {
 
 const rootReducer =  combineReducers({
   errors,
-  account
+  account,
+  dashboard
 });
 
 export default persistReducer(persistConfig, rootReducer);

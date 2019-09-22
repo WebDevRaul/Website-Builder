@@ -12,4 +12,8 @@ const ALERT = {
   SHOW_MESSAGE: 'SHOW_MESSAGE'
 }
 
-export { ERRORS, ACCOUNT, ALERT }
+const POST = {
+  SAVE: 'SAVE_POST'
+}
+
+export { ERRORS, ACCOUNT, ALERT, POST}
