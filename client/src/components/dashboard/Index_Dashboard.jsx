@@ -44,7 +44,8 @@ const IndexDashboard = ({ user, sendPost, history }) => {
     if (!isValid) {
       setState({ error: true, label: errors.text});
     } else {
-      sendPost({ post: textarea, history })
+      const data = { id: 4, name, email, post: textarea }
+      sendPost(data, history)
     }
   };
 

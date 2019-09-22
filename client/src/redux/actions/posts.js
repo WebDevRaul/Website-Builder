@@ -12,10 +12,10 @@ export const loadPosts = () => dispatch => {
    })
 }
 
-export const sendPost = ({ post, history }) => dispatch => {
+export const sendPost = (data, history) => dispatch => {
   dispatch({
     type: POST.SAVE,
-    payload: post
+    payload: data
   })
   history.push('/')
 };
