@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { select_account_userData } from '../../redux/selectors/account';
 import validateDashboard from '../utils/validator/dashboard';
-import { sendPost } from '../../redux/actions/dashboard';
+import { sendPost } from '../../redux/actions/posts';
 
 import Responsive from '../common/authWrapper/Responsive';
 import CustomButton from '../common/button/Custom_Button';

@@ -13,6 +13,7 @@ const ALERT = {
 }
 
 const POST = {
+  LOAD: 'LOAD_POST',
   SAVE: 'SAVE_POST'
 }
 

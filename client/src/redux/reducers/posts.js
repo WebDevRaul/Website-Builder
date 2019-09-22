@@ -6,6 +6,10 @@ const INITIAL_STATE = {
 
 const messages = (state=INITIAL_STATE, action) => {
   switch(action.type) {
+    case POST.LOAD:
+      return {
+        posts: action.payload
+      }
     case POST.SAVE:
       return {
         ...state,
