@@ -23,7 +23,7 @@ export const signIn = data => dispatch => {
       user: {
         id: '1',
         name: 'Jhon Snow',
-        email: 'JhonSnow@gmail.com',
+        email: 'Jhonsnow@gmail.com',
       },
       isAuth: true,
     }

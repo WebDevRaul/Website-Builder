@@ -6,6 +6,7 @@ import isEmpty from '../utils/isEmpty/isEmpty';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { select_account_userData } from '../../redux/selectors/account';
+import validateDashboard from '../utils/validator/dashboard';
 
 import Responsive from '../common/authWrapper/Responsive';
 import CustomButton from '../common/button/Custom_Button';
@@ -22,7 +23,7 @@ const IndexDashboard = ({ user }) => {
     label: 'enter message',
     error: false
   });
-  const [textarea, setTextarea] = useState(undefined);
+  const [textarea, setTextarea] = useState('');
 
   const { error, label } = state;
   const { name, email } = user;
@@ -37,8 +38,9 @@ const IndexDashboard = ({ user }) => {
 
   const onClick = e => {
     e.preventDefault();
-    if (isEmpty(textarea)) {
-      setState({ error: true, label:'Textarea field is required!'});
+    const { errors, isValid } = validateDashboard(textarea);
+    if (!isValid) {
+      setState({ error: true, label: errors.text});
     } else {
       console.log(textarea)
     }
