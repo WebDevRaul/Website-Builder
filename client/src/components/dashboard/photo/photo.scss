@@ -3,10 +3,11 @@
 .photo {
   display: flex;
   justify-content: center;
+  height: 100%;
 
   .middle {
     position: absolute;
-    top: 165px;
+    top: 140px;
     height: 75px;
     width: 175px;
     background-color: $mainWhite;

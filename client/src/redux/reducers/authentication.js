@@ -24,7 +24,7 @@ const account = (state=initialState, action) => {
       }
     case ACCOUNT.SIGN_IN_USER:
       return {
-        account: { ...state.account, userDAta: action.payload.user, isAuth: action.payload.isAuth }
+        account: { ...state.account, userData: action.payload.user, isAuth: action.payload.isAuth }
       }
     default:
       return state;

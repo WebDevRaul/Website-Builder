@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Textarea from 'react-textarea-autosize';
 import classnames from 'classnames';
 import isEmpty from '../utils/isEmpty/isEmpty';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { select_account_userData } from '../../redux/selectors/account';
 
 import Responsive from '../common/authWrapper/Responsive';
 import CustomButton from '../common/button/Custom_Button';
@@ -12,10 +16,8 @@ import Photo from './photo/Photo';
 import './indexDashboard.scss';
 
 import logo from '../../assets/img/questionMark.jpg'
-const name='John Doe';
-const email='JohnDoe@gmail.com'
 
-const IndexDashboard = () => {
+const IndexDashboard = ({ user }) => {
   const [state, setState] = useState({
     label: 'enter message',
     error: false
@@ -23,6 +25,7 @@ const IndexDashboard = () => {
   const [textarea, setTextarea] = useState(undefined);
 
   const { error, label } = state;
+  const { name, email } = user;
 
   const onFocus = () => {
     if(error) return setState({ error: false, label: 'enter message' })
@@ -59,6 +62,14 @@ const IndexDashboard = () => {
       </Responsive>
     </div>
   )
-}
+};
 
-export default IndexDashboard;
+IndexDashboard.propTypes = {
+  user: PropTypes.object.isRequired
+};
+
+const mapStateToProps = createStructuredSelector({
+  user: select_account_userData
+});
+
+export default connect(mapStateToProps, {})(IndexDashboard);
