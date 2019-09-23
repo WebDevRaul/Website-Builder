@@ -7,7 +7,7 @@ import { register } from '../../redux/actions/authentication';
 import validateRegister from '../utils/validator/register';
 import Input from '../common/input/Input';
 import CustomButton from '../common/button/Custom_Button';
-import Responsive from '../common/authWrapper/Responsive';
+import Responsive from '../common/responsive/Responsive';
 import Title from '../common/title/Title';
 
 import Logo from '../common/logo/Logo';
@@ -55,7 +55,7 @@ const IndexRegister = ({ register, history }) => {
   }
   return (
     <div className='register'>
-      <Responsive>
+      <Responsive isClass='col-md-10 col m-auto'>
         <Logo wrapper={true} />
         <Title title='Register' />
         <div className='form mb-4'>

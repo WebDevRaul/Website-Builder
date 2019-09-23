@@ -6,7 +6,16 @@ const initialState = {
       id: '1',
       name: 'Jhon Snow',
       email: 'JhonSnow@gmail.com',
-      posts: []
+      posts: [
+        {
+          "post_id": 1,
+          "post": "Lorem ipsum dolor sit amet consectetur"
+        },
+        {
+          "post_id": 2,
+          "post": "Lorem ipsum"
+        }
+      ]
     },
     isAuth: false,
     newUser: false

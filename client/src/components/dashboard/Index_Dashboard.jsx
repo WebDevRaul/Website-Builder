@@ -10,7 +10,7 @@ import { select_account_userData } from '../../redux/selectors/account';
 import validateDashboard from '../utils/validator/dashboard';
 import { sendPost } from '../../redux/actions/posts';
 
-import Responsive from '../common/authWrapper/Responsive';
+import Responsive from '../common/responsive/Responsive';
 import CustomButton from '../common/button/Custom_Button';
 import Credentials from './credentials/Credentials';
 import Title from '../common/title/Title';
@@ -19,6 +19,7 @@ import Photo from './photo/Photo';
 import './indexDashboard.scss';
 
 import logo from '../../assets/img/questionMark.jpg'
+import Post from './post/Post';
 
 const IndexDashboard = ({ user, sendPost, history }) => {
   const [state, setState] = useState({
@@ -28,7 +29,7 @@ const IndexDashboard = ({ user, sendPost, history }) => {
   const [textarea, setTextarea] = useState('');
 
   const { error, label } = state;
-  const { name, email } = user;
+  const { name, email, posts } = user;
 
   const onFocus = () => {
     if(error) return setState({ error: false, label: 'enter message' })
@@ -52,8 +53,8 @@ const IndexDashboard = ({ user, sendPost, history }) => {
   return (
     <div className='dashboard'>
       <div className='row no-gutters'>
-        <div className='col-12 col-md-6'>
-          <Responsive>
+        <div className='col-12 col-md-6 user-info'>
+          <Responsive isClass='col'>
             <Title title={name} />
             <Photo photo={logo} />
             <Credentials name='email' data={email} />
@@ -68,10 +69,10 @@ const IndexDashboard = ({ user, sendPost, history }) => {
             </form>
           </Responsive>
         </div>
-        <div className='col-12 col-md-6'>
-          <Responsive>
+        <div className='col-12 col-md-6 recent-posts'>
+          <Responsive isClass='col'>
             <Title title='Recent Posts' />
-            
+            { posts.map(({ post, post_id }) => <Post key={post_id} post={post} />) }
           </Responsive>
         </div>
       </div>

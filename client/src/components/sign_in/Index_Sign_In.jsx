@@ -10,7 +10,7 @@ import validateSignIn from '../utils/validator/signIn';
 import Input from '../common/input/Input';
 import CustomButton from '../common/button/Custom_Button';
 import Authentication from './authentication/Authentication';
-import Responsive from '../common/authWrapper/Responsive';
+import Responsive from '../common/responsive/Responsive';
 import Logo from '../common/logo/Logo';
 import Title from '../common/title/Title';
 import Alert from '../common/alert/Alert';
@@ -61,7 +61,7 @@ const IndexSignIn = ({ signIn, isAuth, history }) => {
 
   return (
     <div className='sign-in'>
-      <Responsive>
+      <Responsive isClass='col-md-10 col m-auto'>
         <Alert />
         <Logo wrapper={true} />
         <Title title='Sign In' />

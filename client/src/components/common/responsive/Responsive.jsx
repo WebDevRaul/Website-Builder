@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 import './responsive.scss';
 
-const Responsive = ({ children }) => (
+const Responsive = ({ children, isClass }) => (
   <div className='container'>
     <div className='row no-gutters'>
-      <div className='col-sm-12 col-md-10 col m-auto'>
+      <div className={isClass}>
         <div className='responsive'>
           {children}
         </div>
@@ -16,7 +16,8 @@ const Responsive = ({ children }) => (
 );
 
 Responsive.propTypes = {
-  children: PropTypes.array.isRequired
+  children: PropTypes.array.isRequired,
+  isClass: PropTypes.string.isRequired
 };
 
 export default Responsive;
