@@ -4,19 +4,38 @@
       "id": 1,
       "name": "Jhon Snow",
       "email": "JhonSnow@gmail.com",
-      "post": "Lorem ipsum dolor sit amet consectetur"
+      "posts": [
+        {
+          "post_id": 1,
+          "post": "Lorem ipsum dolor sit amet consectetur"
+        },
+        {
+          "post_id": 2,
+          "post": "Lorem ipsum"
+        }
+      ]
     },
     {
       "id": 2,
       "name": "Kevin Roybal",
       "email": "KevinRoybal.gmail.com",
-      "post": "Lorem ipsum dolor sit amet consectetur dolor sit amet"
+      "posts": [
+        {
+          "post_id": 2,
+          "post": "Lorem ipsum dolor sit"
+        }
+      ]
     },
     {
       "id": 3,
       "name": "Nancy F. Marino",
       "email": "NancyFMarino.gmail.com",
-      "post": "Lorem ipsum dolor sit amet"
+      "posts": [
+        {
+          "post_id": 3,
+          "post": "Lorem ipsum dolor sit amet consectetur  dolor sit amet"
+        }
+      ]
     }
   ]
 }

@@ -3,9 +3,10 @@ import { ACCOUNT, ALERT } from '../actions/types';
 const initialState = {
   account: {
     userData: {
-      id: '',
-      name: '',
-      email: '',
+      id: '1',
+      name: 'Jhon Snow',
+      email: 'JhonSnow@gmail.com',
+      posts: []
     },
     isAuth: false,
     newUser: false

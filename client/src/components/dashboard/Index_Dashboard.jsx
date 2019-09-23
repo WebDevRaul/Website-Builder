@@ -51,20 +51,30 @@ const IndexDashboard = ({ user, sendPost, history }) => {
 
   return (
     <div className='dashboard'>
-      <Responsive>
-        <Title title={name} />
-        <Photo photo={logo} />
-        <Credentials name='email' data={email} />
-        <form className='form-message'>
-          <div className={classnames('textarea', {'validate': error})}>
-            <Textarea minRows={3} name='textarea' onChange={e => onChange(e)} onFocus={onFocus} />
-            <span className={classnames('textarea-label', {'shrink': !isEmpty(textarea)})}>{label}</span>
-          </div>
-          <div className='submit' onClick={onClick}>
-            <CustomButton value='submit' isClass='inverted' />
-          </div>
-        </form>
-      </Responsive>
+      <div className='row no-gutters'>
+        <div className='col-12 col-md-6'>
+          <Responsive>
+            <Title title={name} />
+            <Photo photo={logo} />
+            <Credentials name='email' data={email} />
+            <form className='form-message'>
+              <div className={classnames('textarea', {'validate': error})}>
+                <Textarea minRows={3} name='textarea' onChange={e => onChange(e)} onFocus={onFocus} />
+                <span className={classnames('textarea-label', {'shrink': !isEmpty(textarea)})}>{label}</span>
+              </div>
+              <div className='submit' onClick={onClick}>
+                <CustomButton value='submit' isClass='inverted' />
+              </div>
+            </form>
+          </Responsive>
+        </div>
+        <div className='col-12 col-md-6'>
+          <Responsive>
+            <Title title='Recent Posts' />
+            
+          </Responsive>
+        </div>
+      </div>
     </div>
   )
 };
