@@ -11,7 +11,6 @@ const IndexHome = ({ loadPosts }) => {
 
   useEffect(() => {
     loadPosts();
-    console.log('load')
   },[loadPosts])
 
   return(
