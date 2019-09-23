@@ -18,7 +18,7 @@ const account = (state=initialState, action) => {
       return {
         account: {...state.account, newUser: action.payload}
       }
-    case ALERT.SHOW_MESSAGE:
+    case ALERT.HIDE_MESSAGE:
       return {
         account: {...state.account, newUser: false}
       }

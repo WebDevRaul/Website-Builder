@@ -12,7 +12,7 @@ export const register = (data, history) => dispatch => {
 
 export const alert = () => {
   return { 
-    type: ALERT.SHOW_MESSAGE
+    type: ALERT.HIDE_MESSAGE
   };
 };
 

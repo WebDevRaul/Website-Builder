@@ -8,7 +8,7 @@ const messages = (state=INITIAL_STATE, action) => {
   switch(action.type) {
     case POST.LOAD:
       return {
-        posts: [...state.posts, action.payload]
+        posts: action.payload
       }
     case POST.SAVE:
       return {

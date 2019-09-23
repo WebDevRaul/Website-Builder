@@ -17,5 +17,5 @@ export const sendPost = (data, history) => dispatch => {
     type: POST.SAVE,
     payload: data
   })
-  history.push('/')
+  // history.push('/')
 };

@@ -9,7 +9,7 @@ const ACCOUNT = {
 };
 
 const ALERT = {
-  SHOW_MESSAGE: 'SHOW_MESSAGE'
+  HIDE_MESSAGE: 'HIDE_MESSAGE'
 }
 
 const POST = {
