@@ -14,12 +14,12 @@ import Responsive from '../common/responsive/Responsive';
 import CustomButton from '../common/button/Custom_Button';
 import Credentials from './credentials/Credentials';
 import Title from '../common/title/Title';
+import RecentPosts from './recentPosts/RecentPosts';
 import Photo from './photo/Photo';
 
 import './indexDashboard.scss';
 
 import logo from '../../assets/img/questionMark.jpg'
-import Post from './post/Post';
 
 const IndexDashboard = ({ user, sendPost, history }) => {
   const [state, setState] = useState({
@@ -72,7 +72,7 @@ const IndexDashboard = ({ user, sendPost, history }) => {
         <div className='col-12 col-md-6 recent-posts'>
           <Responsive isClass='col'>
             <Title title='Recent Posts' />
-            { posts.map(({ post, post_id }) => <Post key={post_id} post={post} />) }
+            { posts.map(({ post, post_id }) => <RecentPosts key={post_id} post={post} id={post_id} />) }
           </Responsive>
         </div>
       </div>

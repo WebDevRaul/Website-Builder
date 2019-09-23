@@ -1,38 +1,38 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Jhon Snow",
       "email": "JhonSnow@gmail.com",
       "posts": [
         {
-          "post_id": 1,
+          "post_id": "1a",
           "post": "Lorem ipsum dolor sit amet consectetur"
         },
         {
-          "post_id": 2,
+          "post_id": "2a",
           "post": "Lorem ipsum"
         }
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Kevin Roybal",
       "email": "KevinRoybal.gmail.com",
       "posts": [
         {
-          "post_id": 2,
+          "post_id": "2b",
           "post": "Lorem ipsum dolor sit"
         }
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Nancy F. Marino",
       "email": "NancyFMarino.gmail.com",
       "posts": [
         {
-          "post_id": 3,
+          "post_id": "3c",
           "post": "Lorem ipsum dolor sit amet consectetur  dolor sit amet"
         }
       ]

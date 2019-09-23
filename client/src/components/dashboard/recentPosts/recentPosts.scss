@@ -1,0 +1,42 @@
+@import '../../../index.scss';
+
+.recent-posts {
+
+  .edit {
+    display: flex;
+    justify-content: flex-start;
+    p {
+      padding: 2px;
+    }
+    textarea {
+      border: none;
+      width: 100%;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .buttons {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .btn-edit, .btn-delete {
+      display: flex;
+      justify-content: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .btn-delete {
+      &:hover {
+        color: #ff0000;
+      }
+    }
+  }
+}

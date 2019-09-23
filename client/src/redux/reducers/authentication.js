@@ -8,11 +8,11 @@ const initialState = {
       email: 'JhonSnow@gmail.com',
       posts: [
         {
-          "post_id": 1,
+          "post_id": "1a",
           "post": "Lorem ipsum dolor sit amet consectetur"
         },
         {
-          "post_id": 2,
+          "post_id": "2a",
           "post": "Lorem ipsum"
         }
       ]
