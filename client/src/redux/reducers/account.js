@@ -8,11 +8,11 @@ const initialState = {
       email: 'JhonSnow@gmail.com',
       posts: [
         {
-          "post_id": "1a",
+          "id": "1a",
           "post": "Lorem ipsum dolor sit amet consectetur"
         },
         {
-          "post_id": "2a",
+          "id": "2a",
           "post": "Lorem ipsum"
         }
       ]
@@ -40,7 +40,15 @@ const user = (state=initialState, action) => {
       return {
         account: { ...state.account , 
           user: { ...state.account.user, 
-            posts: [...state.account.user.posts, action.payload] }}
+            posts: [...state.account.user.posts, action.payload] }
+          }
+      }
+    case POST.EDIT:
+      return {
+        account: { ...state.account , 
+          user: { ...state.account.user, 
+            posts: [...state.account.user.posts.filter(item => item.id !== action.payload.id), action.payload] }
+          }
       }
     default:
       return state;

@@ -16,3 +16,8 @@ export const select_account_isAuth = createSelector(
   [select_account_state],
   account => account.isAuth
 );
+
+export const select_user_posts = createSelector(
+  [select_account_state],
+  account => account.user.posts
+)

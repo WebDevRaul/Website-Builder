@@ -6,11 +6,11 @@
       "email": "JhonSnow@gmail.com",
       "posts": [
         {
-          "post_id": "1a",
+          "id": "1a",
           "post": "Lorem ipsum dolor sit amet consectetur"
         },
         {
-          "post_id": "2a",
+          "id": "2a",
           "post": "Lorem ipsum"
         }
       ]
@@ -21,7 +21,7 @@
       "email": "KevinRoybal.gmail.com",
       "posts": [
         {
-          "post_id": "2b",
+          "id": "2b",
           "post": "Lorem ipsum dolor sit"
         }
       ]
@@ -32,7 +32,7 @@
       "email": "NancyFMarino.gmail.com",
       "posts": [
         {
-          "post_id": "3c",
+          "id": "3c",
           "post": "Lorem ipsum dolor sit amet consectetur  dolor sit amet"
         }
       ]

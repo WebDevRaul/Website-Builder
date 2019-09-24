@@ -37,3 +37,10 @@ export const savePost = (data, history) => dispatch => {
   })
   // history.push('/')
 };
+
+export const editPost = data => dispatch => {
+  dispatch({
+    type: POST.EDIT,
+    payload: data
+  })
+}

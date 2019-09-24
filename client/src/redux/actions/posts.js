@@ -11,11 +11,3 @@ export const loadPosts = () => dispatch => {
     payload: db.users
    })
 }
-
-export const sendPost = (data, history) => dispatch => {
-  dispatch({
-    type: POST.SAVE,
-    payload: data
-  })
-  // history.push('/')
-};

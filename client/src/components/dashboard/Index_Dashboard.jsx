@@ -14,7 +14,7 @@ import Responsive from '../common/responsive/Responsive';
 import CustomButton from '../common/button/Custom_Button';
 import Credentials from './credentials/Credentials';
 import Title from '../common/title/Title';
-import RecentPosts from './recentPosts/RecentPosts';
+import PostWrapper from './postWrapper/PostWrapper';
 import Photo from './photo/Photo';
 
 import './indexDashboard.scss';
@@ -29,7 +29,7 @@ const IndexDashboard = ({ user, savePost, history }) => {
   const [textarea, setTextarea] = useState('');
 
   const { error, label } = state;
-  const { name, email, posts } = user;
+  const { name, email } = user;
 
   const onFocus = () => {
     if(error) return setState({ error: false, label: 'enter message' })
@@ -45,7 +45,7 @@ const IndexDashboard = ({ user, savePost, history }) => {
     if (!isValid) {
       setState({ error: true, label: errors.text});
     } else {
-      const data = { post_id: "3a", post: textarea }
+      const data = { id: "3a", post: textarea }
       savePost(data, history)
     }
   };
@@ -72,7 +72,7 @@ const IndexDashboard = ({ user, savePost, history }) => {
         <div className='col-12 col-md-6 recent-posts'>
           <Responsive isClass='col'>
             <Title title='Recent Posts' />
-            { posts.map(({ post, post_id }) => <RecentPosts key={post_id} post={post} id={post_id} />) }
+            <PostWrapper />
           </Responsive>
         </div>
       </div>

@@ -1,1 +1,3 @@
-fetch posts in useEfect and update if !== to redux posts
+load just 5 msgs on home page
+validation on edit post
+sort editposts on id

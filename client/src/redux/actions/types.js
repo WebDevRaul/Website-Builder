@@ -14,7 +14,8 @@ const ALERT = {
 
 const POST = {
   LOAD: 'LOAD_POST',
-  SAVE: 'SAVE_POST'
+  SAVE: 'SAVE_POST',
+  EDIT: 'EDIT_POST'
 }
 
 export { ERRORS, ACCOUNT, ALERT, POST}

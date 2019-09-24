@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   posts: []
 };
 
-const messages = (state=INITIAL_STATE, action) => {
+const posts = (state=INITIAL_STATE, action) => {
   switch(action.type) {
     case POST.LOAD:
       return {
@@ -15,4 +15,4 @@ const messages = (state=INITIAL_STATE, action) => {
   }
 }
 
-export default messages;
+export default posts;
