@@ -50,6 +50,13 @@ const user = (state=initialState, action) => {
             posts: [...state.account.user.posts.filter(item => item.id !== action.payload.id), action.payload] }
           }
       }
+    case POST.DELETE:
+      return {
+        account: { ...state.account , 
+          user: { ...state.account.user, 
+            posts: [...state.account.user.posts.filter(item => item.id !== action.payload)] }
+          }
+      }
     default:
       return state;
   };

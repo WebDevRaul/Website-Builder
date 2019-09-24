@@ -5,7 +5,7 @@ import Textarea from 'react-textarea-autosize';
 
 import './recentPosts.scss';
 
-const RecentPosts = ({ post, id, editPost }) => {
+const RecentPosts = ({ post, id, editPost, deletePost }) => {
   const [edit, setEdit] = useState(false);
   const [text, setText] = useState(post);
 
@@ -18,13 +18,16 @@ const RecentPosts = ({ post, id, editPost }) => {
   const onChange = e => {
     setText(e.target.value)
   }
+
+  const onDelete = () => {
+    deletePost(id)
+  }
   
   return(
     <div className='recent-posts post p-2'>
       <div className='row no-gutters'>
         <div className='col-9'>
           <div className='edit'>
-            {console.log(id)}
             {
               !edit ? 
               <p className='mb-0'>{post}</p> :
@@ -38,7 +41,7 @@ const RecentPosts = ({ post, id, editPost }) => {
               <i className={!edit ? 'fas fa-pen' : 'fas fa-check'} onClick={onClick}></i>
             </div>
             <div className='btn-delete'>
-              <i className='far fa-times-circle'></i>
+              <i className='far fa-times-circle' onClick={onDelete}></i>
             </div>
           </div>
         </div>
@@ -50,7 +53,8 @@ const RecentPosts = ({ post, id, editPost }) => {
 RecentPosts.propTypes = {
   post: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  editPost: PropTypes.func.isRequired
+  editPost: PropTypes.func.isRequired,
+  deletePost: PropTypes.func.isRequired
 }
 
 export default RecentPosts;

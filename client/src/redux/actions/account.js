@@ -44,3 +44,10 @@ export const editPost = data => dispatch => {
     payload: data
   })
 }
+
+export const deletePost = id => dispatch => {
+  dispatch({
+    type: POST.DELETE,
+    payload: id
+  })
+}
