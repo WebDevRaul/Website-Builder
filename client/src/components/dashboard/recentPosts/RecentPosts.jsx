@@ -5,13 +5,13 @@ import Textarea from 'react-textarea-autosize';
 
 import './recentPosts.scss';
 
-const RecentPosts = ({ post, id, editPost, deletePost }) => {
+const RecentPosts = ({ post, id, position,  editPost, deletePost }) => {
   const [edit, setEdit] = useState(false);
   const [text, setText] = useState(post);
 
   const onClick = () => {
     setEdit(!edit);
-    const data = { id, post: text }
+    const data = { id, post: text, position }
     if(edit && (text !== post)) return editPost(data);
   }
 
@@ -54,7 +54,8 @@ RecentPosts.propTypes = {
   post: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   editPost: PropTypes.func.isRequired,
-  deletePost: PropTypes.func.isRequired
+  deletePost: PropTypes.func.isRequired,
+  position: PropTypes.number.isRequired
 }
 
 export default RecentPosts;

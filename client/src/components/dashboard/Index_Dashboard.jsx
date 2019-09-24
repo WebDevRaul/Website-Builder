@@ -45,8 +45,9 @@ const IndexDashboard = ({ user, savePost, history }) => {
     if (!isValid) {
       setState({ error: true, label: errors.text});
     } else {
-      const data = { id: "3a", post: textarea }
-      savePost(data, history)
+      const data = { id: "3a", post: textarea, position: 7 };
+      savePost(data, history);
+      setTextarea('');
     }
   };
 
@@ -60,7 +61,7 @@ const IndexDashboard = ({ user, savePost, history }) => {
             <Credentials name='email' data={email} />
             <form className='form-message'>
               <div className={classnames('textarea', {'validate': error})}>
-                <Textarea minRows={3} name='textarea' onChange={e => onChange(e)} onFocus={onFocus} />
+                <Textarea minRows={3} name='textarea' onChange={e => onChange(e)} onFocus={onFocus} value={textarea} />
                 <span className={classnames('textarea-label', {'shrink': !isEmpty(textarea)})}>{label}</span>
               </div>
               <div className='submit' onClick={onClick}>

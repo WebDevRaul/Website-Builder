@@ -9,11 +9,13 @@ const initialState = {
       posts: [
         {
           "id": "1a",
-          "post": "Lorem ipsum dolor sit amet consectetur"
+          "post": "Lorem ipsum dolor sit amet consectetur",
+          "position": 1
         },
         {
           "id": "2a",
-          "post": "Lorem ipsum"
+          "post": "Lorem ipsum",
+          "position": 2
         }
       ]
     },

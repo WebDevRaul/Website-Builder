@@ -7,11 +7,13 @@
       "posts": [
         {
           "id": "1a",
-          "post": "Lorem ipsum dolor sit amet consectetur"
+          "post": "Lorem ipsum dolor sit amet consectetur",
+          "postion": 3
         },
         {
           "id": "2a",
-          "post": "Lorem ipsum"
+          "post": "Lorem ipsum",
+          "postion": 1
         }
       ]
     },
@@ -22,7 +24,8 @@
       "posts": [
         {
           "id": "2b",
-          "post": "Lorem ipsum dolor sit"
+          "post": "Lorem ipsum dolor sit",
+          "postion": 2
         }
       ]
     },
@@ -33,7 +36,8 @@
       "posts": [
         {
           "id": "3c",
-          "post": "Lorem ipsum dolor sit amet consectetur  dolor sit amet"
+          "post": "Lorem ipsum dolor sit amet consectetur  dolor sit amet",
+          "postion": 4
         }
       ]
     }

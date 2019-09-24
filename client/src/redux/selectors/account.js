@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+import { doSort } from '../utils/sort';
 
 const select_account_state = state => state.user.account;
 
@@ -19,5 +20,5 @@ export const select_account_isAuth = createSelector(
 
 export const select_user_posts = createSelector(
   [select_account_state],
-  account => account.user.posts
+  account => doSort(account.user.posts)
 )

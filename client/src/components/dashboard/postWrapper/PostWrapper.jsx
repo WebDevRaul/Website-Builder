@@ -16,11 +16,17 @@ const PostWrapper = ({ posts, editPost, deletePost }) => {
   const deletePostCallback = id => {
     deletePost(id)
   }
-
   return (
     <>
-      { posts.map(({ post, id }) => (
-        <RecentPosts editPost={editPostCallback} deletePost={deletePostCallback} key={id} post={post} id={id} />
+      { posts.map(({ post, id, position }) => (
+        <RecentPosts 
+          key={id} 
+          editPost={editPostCallback} 
+          deletePost={deletePostCallback} 
+          id={id}
+          post={post}
+          position={position}
+         />
       )) }
     </>
   )
