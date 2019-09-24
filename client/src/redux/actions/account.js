@@ -1,4 +1,4 @@
-import { ACCOUNT, ALERT } from './types';
+import { ACCOUNT, ALERT, POST } from './types';
 // import axios from 'axios';
 // import URL from '../../utils/URL';
 
@@ -29,3 +29,11 @@ export const signIn = data => dispatch => {
     }
   })
 }
+
+export const savePost = (data, history) => dispatch => {
+  dispatch({
+    type: POST.SAVE,
+    payload: data
+  })
+  // history.push('/')
+};

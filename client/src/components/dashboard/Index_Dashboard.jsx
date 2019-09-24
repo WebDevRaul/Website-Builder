@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import Textarea from 'react-textarea-autosize';
 import classnames from 'classnames';
 import isEmpty from '../utils/isEmpty/isEmpty';
+import validateDashboard from '../utils/validator/dashboard';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { savePost } from '../../redux/actions/account';
 import { createStructuredSelector } from 'reselect';
-import { select_account_userData } from '../../redux/selectors/account';
-import validateDashboard from '../utils/validator/dashboard';
-import { sendPost } from '../../redux/actions/posts';
+import { select_account_user } from '../../redux/selectors/account';
 
 import Responsive from '../common/responsive/Responsive';
 import CustomButton from '../common/button/Custom_Button';
@@ -21,7 +21,7 @@ import './indexDashboard.scss';
 
 import logo from '../../assets/img/questionMark.jpg'
 
-const IndexDashboard = ({ user, sendPost, history }) => {
+const IndexDashboard = ({ user, savePost, history }) => {
   const [state, setState] = useState({
     label: 'enter message',
     error: false
@@ -45,8 +45,8 @@ const IndexDashboard = ({ user, sendPost, history }) => {
     if (!isValid) {
       setState({ error: true, label: errors.text});
     } else {
-      const data = { id: 4, name, email, post: textarea }
-      sendPost(data, history)
+      const data = { post_id: "3a", post: textarea }
+      savePost(data, history)
     }
   };
 
@@ -82,11 +82,11 @@ const IndexDashboard = ({ user, sendPost, history }) => {
 
 IndexDashboard.propTypes = {
   user: PropTypes.object.isRequired,
-  sendPost: PropTypes.func.isRequired
+  savePost: PropTypes.func.isRequired
 };
 
 const mapStateToProps = createStructuredSelector({
-  user: select_account_userData
+  user: select_account_user
 });
 
-export default connect(mapStateToProps, { sendPost })(withRouter(IndexDashboard));
+export default connect(mapStateToProps, { savePost })(withRouter(IndexDashboard));

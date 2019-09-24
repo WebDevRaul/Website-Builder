@@ -1,8 +1,8 @@
-import { ACCOUNT, ALERT } from '../actions/types';
+import { ACCOUNT, ALERT, POST } from '../actions/types';
 
 const initialState = {
   account: {
-    userData: {
+    user: {
       id: '1',
       name: 'Jhon Snow',
       email: 'JhonSnow@gmail.com',
@@ -22,7 +22,7 @@ const initialState = {
   }
 };
 
-const account = (state=initialState, action) => {
+const user = (state=initialState, action) => {
   switch(action.type) {
     case ACCOUNT.REGISTER_USER:
       return {
@@ -34,11 +34,17 @@ const account = (state=initialState, action) => {
       }
     case ACCOUNT.SIGN_IN_USER:
       return {
-        account: { ...state.account, userData: action.payload.user, isAuth: action.payload.isAuth }
+        account: { ...state.account, user: action.payload.user, isAuth: action.payload.isAuth }
+      }
+    case POST.SAVE:
+      return {
+        account: { ...state.account , 
+          user: { ...state.account.user, 
+            posts: [...state.account.user.posts, action.payload] }}
       }
     default:
       return state;
   };
 };
 
-export default account;
+export default user;

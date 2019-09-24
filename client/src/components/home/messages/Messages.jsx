@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { select_posts } from '../../../redux/selectors/posts';
 
-import Responsive from '../../common/authWrapper/Responsive';
+import Responsive from '../../common/responsive/Responsive';
 import Post from './post/Post';
 import Title from '../../common/title/Title';
 
@@ -16,7 +16,7 @@ const Messages = ({ posts }) => {
   return (
     <div className='messages'>
       <Title title='latest posts' />
-      <Responsive>
+      <Responsive isClass='col-md-10 col m-auto'>
         { posts.map(({ name, posts }) => {
           return posts.map(({ post, post_id }) => <Post key={post_id} name={name} post={post} img={logo} />)
         }) }

@@ -10,11 +10,6 @@ const messages = (state=INITIAL_STATE, action) => {
       return {
         posts: action.payload
       }
-    case POST.SAVE:
-      return {
-        ...state,
-        posts: [...state.posts, action.payload]
-      }
     default:
       return state;
   }

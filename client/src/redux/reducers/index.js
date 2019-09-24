@@ -3,7 +3,7 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import errors from './errors';
-import account from './authentication';
+import user from './account';
 import posts from './posts';
 
 const persistConfig = {
@@ -15,7 +15,7 @@ const persistConfig = {
 
 const rootReducer =  combineReducers({
   errors,
-  account,
+  user,
   posts
 });
 

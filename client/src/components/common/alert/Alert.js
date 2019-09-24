@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { alert } from '../../../redux/actions/authentication';
+import { alert } from '../../../redux/actions/account';
 import { createStructuredSelector } from 'reselect';
 import { select_account_newUser } from '../../../redux/selectors/account';
 

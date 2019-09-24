@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+
 import Textarea from 'react-textarea-autosize';
 
 import './recentPosts.scss';
 
-const RecentPosts = ({ post, id }) => {
+const RecentPosts = ({ post, id, savePost }) => {
   const [edit, setEdit] = useState(false);
   const [text, setText] = useState(post);
 

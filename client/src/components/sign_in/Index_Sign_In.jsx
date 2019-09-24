@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { select_account_isAuth } from '../../redux/selectors/account';
-import { signIn } from '../../redux/actions/authentication';
+import { signIn } from '../../redux/actions/account';
 import validateSignIn from '../utils/validator/signIn';
 
 import Input from '../common/input/Input';

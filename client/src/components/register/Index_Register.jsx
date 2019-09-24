@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { register } from '../../redux/actions/authentication';
+import { register } from '../../redux/actions/account';
 
 import validateRegister from '../utils/validator/register';
 import Input from '../common/input/Input';
