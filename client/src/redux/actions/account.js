@@ -28,6 +28,16 @@ export const signIn = data => dispatch => {
   })
 }
 
+export const signOut = () => dispatch => {
+    dispatch({
+      type: ACCOUNT.SIGN_OUT_USER,
+      payload: {
+        user: {},
+        isAuth: false
+      }
+    })
+}
+
 export const savePost = (data, history) => dispatch => {
   dispatch({
     type: POST.SAVE,

@@ -51,7 +51,8 @@
         width: 100%;
         border: 1px solid $secondaryColor;
         border-radius: $mainBorderRadius;
-        overflow-y: hidden; 
+        overflow-y: hidden;
+        resize: none;
   
         &:focus {
           outline: none;

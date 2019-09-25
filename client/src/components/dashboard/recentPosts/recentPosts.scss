@@ -26,6 +26,8 @@
 
     textarea {
       padding: 5px;
+      overflow-y: hidden;
+      resize: none;
     }
 
     p {

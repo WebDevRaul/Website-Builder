@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { signOut } from '../../redux/actions/account';
+import { createStructuredSelector } from 'reselect';
+import { select_account_isAuth } from '../../redux/selectors/account';
 
 import './navbar.scss';
 
-const Navbar = () => {
+const Navbar = ({ isAuth, signOut }) => {
   const [isOpen, setOpen] = useState(false);
-  const guest  = false;
 
   const toggle = () => {
     setOpen(isOpen => !isOpen);
@@ -18,8 +22,15 @@ const Navbar = () => {
     }
   }
 
+  const onSignOut = () => {
+    signOut()
+  }
+
   const authLinks = (
-    <li><Link to='/dashboard' onClick={onClick}>Dashboard</Link></li>
+    <>
+      <li><Link to='/dashboard' onClick={onClick}>Dashboard</Link></li>
+      <li><span className='sign-out' onClick={onSignOut}>Sign out</span></li>
+    </>
   );
   
   const guestLinks = (
@@ -41,13 +52,22 @@ const Navbar = () => {
             <i></i>
           </button>
         </div>
-        <ul className={classnames('nav-links', {[guest ? 'show-nav-1' : 'show-nav-2'] : isOpen})} >
+        <ul className={classnames('nav-links', {[isAuth ? 'show-nav-1' : 'show-nav-2'] : isOpen})} >
           <li ><Link to='/' onClick={onClick}>Home</Link></li>
-          {guest ? authLinks : guestLinks}
+          {isAuth ? authLinks : guestLinks}
         </ul>
       </div>
     </nav>
   )
-}
+};
 
-export default Navbar;
+Navbar.propTypes = {
+  isAuth: PropTypes.bool.isRequired,
+  signOut: PropTypes.func.isRequired
+};
+
+const mapStateToProps = createStructuredSelector({
+  isAuth: select_account_isAuth
+});
+
+export default connect(mapStateToProps, { signOut })(Navbar);

@@ -2,12 +2,7 @@ import { ACCOUNT, ALERT, POST } from '../actions/types';
 
 const initialState = {
   account: {
-    user: {
-      id: '',
-      name: '',
-      email: '',
-      posts: []
-    },
+    user: {},
     isAuth: false,
     newUser: false
   }
@@ -26,6 +21,12 @@ const user = (state=initialState, action) => {
     case ACCOUNT.SIGN_IN_USER:
       return {
         account: { ...state.account, user: action.payload.user, isAuth: action.payload.isAuth }
+      }
+    case ACCOUNT.SIGN_OUT_USER:
+      return {
+        account: {
+          ...state.account, user: action.payload.user, isAuth: action.payload.isAuth
+        }
       }
     case POST.SAVE:
       return {

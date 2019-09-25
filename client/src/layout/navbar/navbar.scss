@@ -49,6 +49,14 @@
       font-weight: bold;
       letter-spacing: 4px;
       text-align: center;
+
+      .sign-out {
+        color: $primaryColor;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
       
       a {
         color: $primaryColor;
