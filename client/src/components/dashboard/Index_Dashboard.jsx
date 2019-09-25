@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Textarea from 'react-textarea-autosize';
 import classnames from 'classnames';
 import isEmpty from '../utils/isEmpty/isEmpty';
-import validateDashboard from '../utils/validator/dashboard';
+import validatePost from '../utils/validator/dashboard';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { savePost } from '../../redux/actions/account';
@@ -41,7 +41,7 @@ const IndexDashboard = ({ user, savePost, history }) => {
 
   const onClick = e => {
     e.preventDefault();
-    const { errors, isValid } = validateDashboard(textarea);
+    const { errors, isValid } = validatePost(textarea);
     if (!isValid) {
       setState({ error: true, label: errors.text});
     } else {

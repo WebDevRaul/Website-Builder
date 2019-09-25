@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import validatePost from '../../utils/validator/dashboard';
 
 import Textarea from 'react-textarea-autosize';
 
@@ -8,12 +9,24 @@ import './recentPosts.scss';
 const RecentPosts = ({ post, id, position,  editPost, deletePost }) => {
   const [edit, setEdit] = useState(false);
   const [text, setText] = useState(post);
+  const [error, setError] = useState(undefined);
 
   const onClick = () => {
     setEdit(!edit);
+
+    const { errors, isValid } = validatePost(text);
     const data = { id, post: text, position }
-    if(edit && (text !== post)) return editPost(data);
-    setText(post);
+
+    if (!isValid) {
+      setError(errors.post);
+      setEdit(true);
+    } else {
+      if(edit && (text !== post)) {
+        editPost(data);
+        setError(undefined)
+        setText(post);
+      }
+    }
   }
 
   const onChange = e => {
@@ -26,6 +39,8 @@ const RecentPosts = ({ post, id, position,  editPost, deletePost }) => {
   
   return(
     <div className='recent-posts post p-2'>
+      {console.log(error)}
+      {!!error ? <span className='error'>{error}</span> : null}
       <div className='row no-gutters'>
         <div className='col-9'>
           <div className='edit'>

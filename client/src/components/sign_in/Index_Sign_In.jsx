@@ -62,7 +62,7 @@ const IndexSignIn = ({ signIn, isAuth, history }) => {
   return (
     <div className='sign-in'>
       <Responsive isClass='col-md-10 col m-auto'>
-        <Alert />
+        <Alert text='You have successfully registered!' />
         <Logo wrapper={true} />
         <Title title='Sign In' />
         <div className='form'>

@@ -7,7 +7,7 @@ import { select_account_newUser } from '../../../redux/selectors/account';
 
 import './alert.scss';
 
-const Alert = ({ show, alert }) => {
+const Alert = ({ show, alert, text }) => {
 
   useEffect(() => {
     if(show) setTimeout(() => alert(), 3000);
@@ -16,7 +16,7 @@ const Alert = ({ show, alert }) => {
   if(show) {
   return (
     <div className='alert'>
-        You have successfully registered!
+      {text}
     </div>
     )
   } else {
@@ -25,7 +25,8 @@ const Alert = ({ show, alert }) => {
 };
 
 Alert.propTypes = {
-  show: PropTypes.bool.isRequired
+  show: PropTypes.bool.isRequired,
+  text: PropTypes.string.isRequired
 };
 
 const mapStateToProps = createStructuredSelector({

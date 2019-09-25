@@ -1,6 +1,10 @@
 @import '../../../index.scss';
 
 .recent-posts {
+  .error {
+    color: #ff0000;
+    padding-bottom: 8px;
+  }
 
   .edit {
     display: flex;
