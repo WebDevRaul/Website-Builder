@@ -13,6 +13,7 @@ const RecentPosts = ({ post, id, position,  editPost, deletePost }) => {
     setEdit(!edit);
     const data = { id, post: text, position }
     if(edit && (text !== post)) return editPost(data);
+    setText(post);
   }
 
   const onChange = e => {

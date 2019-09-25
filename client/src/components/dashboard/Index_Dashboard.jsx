@@ -45,7 +45,7 @@ const IndexDashboard = ({ user, savePost, history }) => {
     if (!isValid) {
       setState({ error: true, label: errors.text});
     } else {
-      const data = { id: "3a", post: textarea, position: 7 };
+      const data = { id: "1d", post: textarea, position: 7 };
       savePost(data, history);
       setTextarea('');
     }

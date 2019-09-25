@@ -2,6 +2,8 @@ import { ACCOUNT, ALERT, POST } from './types';
 // import axios from 'axios';
 // import URL from '../../utils/URL';
 
+import { user } from '../../db.json';
+
 export const register = (data, history) => dispatch => {
   dispatch({
     type: ACCOUNT.REGISTER_USER,
@@ -20,11 +22,7 @@ export const signIn = data => dispatch => {
   dispatch({
     type: ACCOUNT.SIGN_IN_USER,
     payload: {
-      user: {
-        id: '1',
-        name: 'Jhon Snow',
-        email: 'Jhonsnow@gmail.com',
-      },
+      user,
       isAuth: true,
     }
   })

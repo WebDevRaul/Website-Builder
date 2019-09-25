@@ -1,45 +1,66 @@
 {
-  "users": [
+  "user": {
+    "id": "1",
+    "name": "Jon Snow",
+    "email": "JonSnow@gmail.com",
+    "posts": [
+      {
+        "id": "1a",
+        "post": "Lorem ipsum dolor sit amet consectetur",
+        "position": 2
+      },
+      {
+        "id": "1b",
+        "post": "Lorem ipsum",
+        "position": 1
+      },
+      {
+        "id": "1c",
+        "post": "Lorem ipsum dolor sit amet",
+        "position": 3
+      }
+    ]
+  },
+  "posts": [
     {
-      "id": "1",
-      "name": "Jhon Snow",
-      "email": "JhonSnow@gmail.com",
-      "posts": [
-        {
-          "id": "1a",
-          "post": "Lorem ipsum dolor sit amet consectetur",
-          "postion": 3
-        },
-        {
-          "id": "2a",
-          "post": "Lorem ipsum",
-          "postion": 1
-        }
-      ]
+      "user_id": "1",
+      "name":"Jon Snow",
+      "email":"JonSnow@gmail.com",
+      "id": "1a",
+      "post": "Lorem ipsum dolor sit amet",
+      "position": 1
     },
     {
-      "id": "2",
-      "name": "Kevin Roybal",
-      "email": "KevinRoybal.gmail.com",
-      "posts": [
-        {
-          "id": "2b",
-          "post": "Lorem ipsum dolor sit",
-          "postion": 2
-        }
-      ]
+      "user_id": "5",
+      "name":"John Doe",
+      "email":"JohnDoe@gmail.com",
+      "id": "5a",
+      "post": "Lorem ipsum dolor sit amet consectetur",
+      "position": 5
     },
     {
-      "id": "3",
-      "name": "Nancy F. Marino",
-      "email": "NancyFMarino.gmail.com",
-      "posts": [
-        {
-          "id": "3c",
-          "post": "Lorem ipsum dolor sit amet consectetur  dolor sit amet",
-          "postion": 4
-        }
-      ]
+      "user_id": "3",
+      "name":"Marcus Aurelius",
+      "email":"marcusaurelius@gmail.com",
+      "id": "3a",
+      "post": "Lorem ipsum dolor sit amet",
+      "position": 3
+    },
+    {
+      "user_id": "2",
+      "name":"lia marie",
+      "email":"liamarie@gmail.com",
+      "id": "2a",
+      "post": "Lorem ipsum dolor",
+      "position": 2
+    },
+    {
+      "user_id": "4",
+      "name":"brice johnson",
+      "email":"bricejohnson@gmail.com",
+      "id": "4a",
+      "post": "Lorem ipsum dolor sit amet  ipsum dolor",
+      "position": 4
     }
   ]
 }

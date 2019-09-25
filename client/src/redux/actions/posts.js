@@ -2,12 +2,12 @@ import { POST } from './types';
 // import axios from 'axios';
 // import URL from '../../utils/URL';
 
-import db from '../../db.json';
+import { posts } from '../../db.json';
 
 
 export const loadPosts = () => dispatch => {
   dispatch({ 
     type: POST.LOAD,
-    payload: db.users
+    payload: posts
    })
 }

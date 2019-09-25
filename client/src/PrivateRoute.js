@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // Redux
 import { connect } from 'react-redux';
 
-const PrivateRoute = ({component: Component, account: { account }, ...rest}) => (
+const PrivateRoute = ({component: Component, user: { account }, ...rest}) => (
   <Route 
     {...rest}
     render = {
@@ -16,11 +16,11 @@ const PrivateRoute = ({component: Component, account: { account }, ...rest}) => 
 );
 
 PrivateRoute.propTypes = {
-  account: PropTypes.object.isRequired
+  user: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  account: state.account
+  user: state.user
 });
 
 export default connect(mapStateToProps)(PrivateRoute);
