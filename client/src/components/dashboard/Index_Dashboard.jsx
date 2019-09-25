@@ -63,6 +63,7 @@ const IndexDashboard = ({ user, savePost, history }) => {
               <div className={classnames('textarea', {'validate': error})}>
                 <Textarea minRows={3} name='textarea' onChange={e => onChange(e)} onFocus={onFocus} value={textarea} />
                 <span className={classnames('textarea-label', {'shrink': !isEmpty(textarea)})}>{label}</span>
+                <span className={classnames('badge', { 'over': textarea.length > 50 })}>{textarea.length}</span>
               </div>
               <div className='submit' onClick={onClick}>
                 <CustomButton value='submit' isClass='inverted' />

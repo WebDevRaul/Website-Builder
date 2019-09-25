@@ -9,6 +9,25 @@
   .edit {
     display: flex;
     justify-content: flex-start;
+
+    .badge {
+      position: absolute;
+      right: 3px;
+      bottom: 2px;
+      padding: 5px 5px 4px 5px;
+      border: 1px solid $secondaryColor;
+      margin: 5px;
+    }
+
+    .over {
+      border-color: #ff0000 !important;
+    }
+
+
+    textarea {
+      padding: 5px;
+    }
+
     p {
       padding: 2px;
       word-wrap: break-word;
