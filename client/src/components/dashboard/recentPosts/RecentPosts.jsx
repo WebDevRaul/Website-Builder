@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import validatePost from '../../utils/validator/dashboard';
 
@@ -8,8 +8,12 @@ import './recentPosts.scss';
 
 const RecentPosts = ({ post, id, position,  editPost, deletePost }) => {
   const [edit, setEdit] = useState(false);
-  const [text, setText] = useState(post);
+  const [text, setText] = useState('');
   const [error, setError] = useState(undefined);
+
+  useEffect(() => {
+    setText(post);
+  },[post])
 
   const onClick = () => {
     setEdit(!edit);
@@ -23,8 +27,7 @@ const RecentPosts = ({ post, id, position,  editPost, deletePost }) => {
     } else {
       if(edit && (text !== post)) {
         editPost(data);
-        setError(undefined)
-        setText(post);
+        setError(undefined);
       }
     }
   }
@@ -34,12 +37,11 @@ const RecentPosts = ({ post, id, position,  editPost, deletePost }) => {
   }
 
   const onDelete = () => {
-    deletePost(id)
+    deletePost(id);
   }
   
   return(
     <div className='recent-posts post p-2'>
-      {console.log(error)}
       {!!error ? <span className='error'>{error}</span> : null}
       <div className='row no-gutters'>
         <div className='col-9'>

@@ -14,8 +14,9 @@ const PostWrapper = ({ posts, editPost, deletePost }) => {
   }
 
   const deletePostCallback = id => {
-    deletePost(id)
+    deletePost(id);
   }
+  
   return (
     <>
       { posts.map(({ post, id, position }, index) => (
