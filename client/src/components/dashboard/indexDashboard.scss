@@ -99,8 +99,18 @@
   }
 
   .recent-posts {
+
+    .no-post {
+      padding: 10px 8px;
+      margin: 10px 0;
+    }
     .responsive {
       margin: 0 auto 0 0;
+      padding-bottom: 14px;
+      
+      .title {
+        padding-bottom: 14px;
+      }
     }
   }
   .user-info {

@@ -19,16 +19,20 @@ const PostWrapper = ({ posts, editPost, deletePost }) => {
   
   return (
     <>
-      { posts.map(({ post, id, position }, index) => (
-        <RecentPosts 
-          key={index} 
-          editPost={editPostCallback} 
-          deletePost={deletePostCallback} 
-          id={id}
-          post={post}
-          position={position}
-         />
-      )) }
+    {console.log(posts.length)}
+      { posts.length <= 0
+        ? <p className='post no-post'>No posts</p>
+        : posts.map(({ post, id, position }, index) => (
+          <RecentPosts 
+            key={index} 
+            editPost={editPostCallback} 
+            deletePost={deletePostCallback} 
+            id={id}
+            post={post}
+            position={position}
+          />
+        ))
+      }
     </>
   )
 }
