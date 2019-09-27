@@ -9,10 +9,6 @@ const posts = (state=INITIAL_STATE, action) => {
     case POST.LOAD:
       return {
         ...state,
-        posts: action.payload
-      }
-    case POST.LOAD_MORE:
-      return {
         posts: [...state.posts, ...action.payload]
       }
     default:

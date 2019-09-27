@@ -16,14 +16,3 @@ export const loadPosts = data => dispatch => {
     dispatch({ type: LOADING.FALSE })
   }, 3000);
 }
-export const loadMore = data => dispatch => {
-  const { index, lastIndex } = data;
-  dispatch({ type: LOADING.TRUE })
-  dispatch({ 
-    type: POST.LOAD_MORE,
-    payload: posts.slice(index, lastIndex)
-   })
-  setTimeout(() => {
-    dispatch({ type: LOADING.FALSE })
-  }, 3000);
-}

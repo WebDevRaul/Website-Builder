@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { loadPosts, loadMore } from '../../redux/actions/posts';
+import { loadPosts } from '../../redux/actions/posts';
 
 import Title from '../common/title/Title';
 import Messages from './messages/Messages';
@@ -8,23 +9,21 @@ import CustomButton from '../common/button/Custom_Button';
 
 import './indexHome.scss';
 
-const IndexHome = ({ loadPosts, loadMore }) => {
+const IndexHome = ({ loadPosts }) => {
   const [state, setState] = useState({
     index: 0,
-    lastIndex: 5
+    lastIndex: 3
   });
 
   const { index, lastIndex } = state;
 
   
   useEffect(() => {
-    if(index === 0) loadPosts({ index, lastIndex })
+    loadPosts({ index, lastIndex });
   });
 
   const onClick = () => {
     setState({ index: index + 5, lastIndex: lastIndex + 5 });
-    const data = { index: index + 5, lastIndex: lastIndex + 5 };
-    loadMore(data)
   }
 
   return(
@@ -42,4 +41,8 @@ const IndexHome = ({ loadPosts, loadMore }) => {
   )
 };
 
-export default connect(null, { loadPosts, loadMore })(IndexHome);
+IndexHome.propTypes = {
+  loadPosts: PropTypes.func.isRequired
+}
+
+export default connect(null, { loadPosts })(IndexHome);
