@@ -10,7 +10,7 @@ import Register from './pages/register/Register';
 import Footer from './layout/footer/Footer';
 import Dashboard from './pages/dashboard/Dashboard';
 import NotFound from './pages/not_Found/NotFound';
-import Loading from './components/common/loading/Loading';
+import WithLoading from './components/common/loading/WithLoading';
 
 import './app.scss'
 
@@ -20,7 +20,7 @@ const App = () => {
     <Router>
       <div className='app'>
         <Particles />
-        <Loading />
+        <WithLoading />
         <Navbar />
         <Switch>
           <Route exact path='/' component={Home} />

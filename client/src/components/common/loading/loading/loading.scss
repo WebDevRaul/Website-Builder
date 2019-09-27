@@ -1,0 +1,17 @@
+@import '../../../../index.scss';
+
+.loading {
+  display: flex;
+  height: 3px;
+  width: 100%;
+  background-color: $mainWhite;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+
+  .bar {
+    display: flex;
+    background-image: linear-gradient(120deg, $secondaryColor 0%, $primaryColor 100%);
+    transition: width .6s ease;
+  }
+}

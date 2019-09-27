@@ -13,5 +13,5 @@ export const loadPosts = () => dispatch => {
    })
   setTimeout(() => {
     dispatch({ type: LOADING.FALSE })
-  }, 2000);
+  }, 3000);
 }
