@@ -1,17 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { loadPosts } from '../../redux/actions/posts';
+import { loadPosts, loadMore } from '../../redux/actions/posts';
 
 import Title from '../common/title/Title';
 import Messages from './messages/Messages';
+import CustomButton from '../common/button/Custom_Button';
 
 import './indexHome.scss';
 
-const IndexHome = ({ loadPosts }) => {
+const IndexHome = ({ loadPosts, loadMore }) => {
+  const [state, setState] = useState({
+    index: 0,
+    lastIndex: 5
+  });
 
+  const { index, lastIndex } = state;
+
+  
   useEffect(() => {
-    loadPosts();
-  },[loadPosts])
+    if(index === 0) loadPosts({ index, lastIndex })
+  });
+
+  const onClick = () => {
+    setState({ index: index + 5, lastIndex: lastIndex + 5 });
+    const data = { index: index + 5, lastIndex: lastIndex + 5 };
+    loadMore(data)
+  }
 
   return(
     <div className='home'>
@@ -19,10 +33,13 @@ const IndexHome = ({ loadPosts }) => {
         <div className='col'>
           <Title title='Welcome' />
           <Messages />
+          <div className='load-more' onClick={onClick}>
+            <CustomButton value='Load more' isClass='inverted'/>
+          </div>
         </div>
       </div>
     </div>
   )
 };
 
-export default connect(null, { loadPosts })(IndexHome);
+export default connect(null, { loadPosts, loadMore })(IndexHome);

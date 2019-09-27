@@ -19,6 +19,7 @@ const LOADING = {
 
 const POST = {
   LOAD: 'LOAD_POST',
+  LOAD_MORE: 'LOAD_MORE',
   SAVE: 'SAVE_POST',
   EDIT: 'EDIT_POST',
   DELETE: 'DELETE_POST'

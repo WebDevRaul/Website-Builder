@@ -11,4 +11,4 @@ const WithLoading = () => (
   </Switch>
 )
 
-export default WithLoading
+export default WithLoading;
