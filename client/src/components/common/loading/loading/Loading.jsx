@@ -11,32 +11,35 @@ const Loading = ({ loading }) => {
   const [width, setWidth] = useState(5);
 
   useEffect(() => {
-    // start loading
-    if(loading && width < 80) {
-      setTimeout(() => setWidth(width => width + 15), 1000)
-    };
+    const isLoading = setTimeout(() => {
 
-    // load 2% if loading is still true & width is over 80%
-    if(loading && width >= 80 && width < 95) {
-      setTimeout(() => setWidth(width => width + 2), 500)
-    }
-    // stop loading at 95
-    if(loading && width >= 95) {
-      setTimeout(() => setWidth(width), 500)
-    }
+      // start loading
+      if(loading && width < 80) {
+        setTimeout(() => setWidth(width => width + 15), 500)
+        };
+      // load 2% if loading is still true & width is over 80%
+      if(loading && width >= 80 && width < 95) {
+        setWidth(width => width + 2)
+      }
+      // stop loading at 95
+      if(loading && width >= 95) {
+        setWidth(width)
+      }
+      // load complete
+      if(!loading && width !== 5) {
+        setWidth(100);
+      }
 
-    // load complete
-    if(!loading && width !== 5) {
-      const load = () => setWidth(100);
-      load();
-    }
-  })
+    }, 500);
+
+    return () => clearTimeout(isLoading)
+  });
 
   return (
     <div className='loading'>
       <div className="bar" style={{width: `${width}%`}}></div>
     </div>
-  );
+  )
 };
 
 Loading.propTypes = {
