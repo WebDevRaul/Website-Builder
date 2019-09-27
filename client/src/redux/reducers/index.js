@@ -2,9 +2,10 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import errors from './errors';
 import user from './account';
 import posts from './posts';
+import loading from './loading';
+import errors from './errors';
 
 const persistConfig = {
   key: 'root',
@@ -16,7 +17,8 @@ const persistConfig = {
 const rootReducer =  combineReducers({
   errors,
   user,
-  posts
+  posts,
+  loading
 });
 
 export default persistReducer(persistConfig, rootReducer);

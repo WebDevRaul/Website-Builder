@@ -11,9 +11,9 @@ const Footer = () => {
             <span>Copyright &copy; {new Date().getFullYear()}</span>
           </div>
         </div>
-        <div className='col-sm-6'>
-          <div className='footer-text'>
-            <span>Made with <i className="fas fa-heart"></i> by Savin Raul-Calin</span>
+        <div className='col-sm-6 d-flex'>
+          <div className='footer-text m-auto'>
+            <span>Made by Savin Raul-Calin <i className="far fa-smile-beam"></i></span>
           </div>
         </div>
       </div>

@@ -12,6 +12,10 @@ const ACCOUNT = {
 const ALERT = {
   HIDE_MESSAGE: 'HIDE_MESSAGE'
 }
+const LOADING = {
+  TRUE: 'LOADING',
+  FALSE: 'LOADED'
+}
 
 const POST = {
   LOAD: 'LOAD_POST',
@@ -20,4 +24,4 @@ const POST = {
   DELETE: 'DELETE_POST'
 }
 
-export { ERRORS, ACCOUNT, ALERT, POST}
+export { ERRORS, ACCOUNT, ALERT, POST, LOADING}
