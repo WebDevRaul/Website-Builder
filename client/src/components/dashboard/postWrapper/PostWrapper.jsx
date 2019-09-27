@@ -19,7 +19,6 @@ const PostWrapper = ({ posts, editPost, deletePost }) => {
   
   return (
     <>
-    {console.log(posts.length)}
       { posts.length <= 0
         ? <p className='post no-post'>No posts</p>
         : posts.map(({ post, id, position }, index) => (

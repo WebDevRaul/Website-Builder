@@ -1,7 +1,8 @@
 import React from 'react';
+import IndexNotFound from '../../components/not_found/IndexNotFound';
 
 const NotFound = () => (
-  <div>NotFound</div>
+  <IndexNotFound />
 )
 
 export default NotFound;

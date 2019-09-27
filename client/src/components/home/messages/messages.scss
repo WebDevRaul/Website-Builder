@@ -26,3 +26,12 @@
     padding: 10px;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .messages {
+    .title {
+      font-size: .6rem !important;
+      margin-bottom: 0px !important;
+    }
+  }
+}

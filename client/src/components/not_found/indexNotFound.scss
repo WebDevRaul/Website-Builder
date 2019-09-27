@@ -1,0 +1,44 @@
+@import '../../index.scss';
+
+
+.not-found {
+  min-height: calc(100vh - 102.5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .wrapper {
+    text-align: center;
+
+    h1 {
+      text-align: center;
+      font-size: 10rem;
+      color: $primaryColor;
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
+
+    .link {
+      margin-top: 20px;
+      button {
+        letter-spacing: 3px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .not-found {
+    .wrapper {
+      padding: 0 10px;
+      h1 {
+        font-size: 6rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
