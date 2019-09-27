@@ -17,7 +17,7 @@ const Messages = ({ posts }) => {
     <div className='messages'>
       <Title title='latest posts' />
       <Responsive isClass='col-md-10 col m-auto'>
-        {posts.map(({ name, email, id, post }) => <Post key={id} name={name} post={post} img={logo} />)}
+        {posts.map(({ name, id, post }) => <Post key={id} name={name} post={post} img={logo} />)}
       </Responsive>
     </div>
   )

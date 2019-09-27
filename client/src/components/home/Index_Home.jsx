@@ -12,7 +12,7 @@ import './indexHome.scss';
 const IndexHome = ({ loadPosts }) => {
   const [state, setState] = useState({
     index: 0,
-    lastIndex: 3
+    lastIndex: 4
   });
 
   const { index, lastIndex } = state;
@@ -23,7 +23,7 @@ const IndexHome = ({ loadPosts }) => {
   });
 
   const onClick = () => {
-    setState({ index: index + 5, lastIndex: lastIndex + 5 });
+    setState({ index: index + 4, lastIndex: lastIndex + 4 });
   }
 
   return(

@@ -7,11 +7,13 @@ import { posts } from '../../db.json';
 
 export const loadPosts = data => dispatch => {
   const { index, lastIndex } = data;
-  dispatch({ type: LOADING.TRUE })
+  dispatch({ type: LOADING.TRUE });
+
   dispatch({ 
     type: POST.LOAD,
     payload: posts.slice(index, lastIndex)
-   })
+   });
+  
   setTimeout(() => {
     dispatch({ type: LOADING.FALSE })
   }, 3000);
