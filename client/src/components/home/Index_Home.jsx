@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loadPosts } from '../../redux/actions/posts';
+import { createStructuredSelector } from 'reselect';
+import { select_index } from '../../redux/selectors/posts';
 
 import Title from '../common/title/Title';
 import Messages from './messages/Messages';
@@ -9,22 +11,14 @@ import CustomButton from '../common/button/Custom_Button';
 
 import './indexHome.scss';
 
-const IndexHome = ({ loadPosts }) => {
-  const [state, setState] = useState({
-    index: 0,
-    lastIndex: 4
-  });
+const IndexHome = ({ loadPosts, index: { startIndex, endIndex }}) => {
 
-  const { index, lastIndex } = state;
-
-  
   useEffect(() => {
-    loadPosts({ index, lastIndex });
-  });
+    if(startIndex === 0) loadPosts({ startIndex, endIndex });
+  }, [startIndex, endIndex, loadPosts]);
 
-  const onClick = () => {
-    setState({ index: index + 4, lastIndex: lastIndex + 4 });
-  }
+
+  const onClick = () => loadPosts({ startIndex: startIndex + 4, endIndex: endIndex + 4 });
 
   return(
     <div className='home'>
@@ -42,7 +36,12 @@ const IndexHome = ({ loadPosts }) => {
 };
 
 IndexHome.propTypes = {
-  loadPosts: PropTypes.func.isRequired
-}
+  loadPosts: PropTypes.func.isRequired,
+  index: PropTypes.object.isRequired
+};
 
-export default connect(null, { loadPosts })(IndexHome);
+const mapStateToProps = createStructuredSelector({
+  index: select_index
+})
+
+export default connect(mapStateToProps, { loadPosts })(IndexHome);

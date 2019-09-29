@@ -5,13 +5,17 @@ import { POST, LOADING } from './types';
 import { posts } from '../../db.json';
 
 
-export const loadPosts = data => dispatch => {
-  const { index, lastIndex } = data;
+export const loadPosts = index => dispatch => {
+  const { startIndex, endIndex } = index;
   dispatch({ type: LOADING.TRUE });
 
   dispatch({ 
     type: POST.LOAD,
-    payload: posts.slice(index, lastIndex)
+    payload: {
+      posts: posts.slice(startIndex, endIndex),
+      startIndex,
+      endIndex
+    }
    });
   
   setTimeout(() => {

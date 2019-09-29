@@ -1,7 +1,11 @@
 import { POST } from '../actions/types';
 
 const INITIAL_STATE = {
-  posts: []
+  posts: [],
+  index: {
+    startIndex: 0,
+    endIndex: 4
+  }
 };
 
 const posts = (state=INITIAL_STATE, action) => {
@@ -9,7 +13,8 @@ const posts = (state=INITIAL_STATE, action) => {
     case POST.LOAD:
       return {
         ...state,
-        posts: [...state.posts, ...action.payload]
+        posts: [...state.posts, ...action.payload.posts],
+        index: { startIndex: action.payload.startIndex, endIndex: action.payload.endIndex }
       }
     default:
       return state;
