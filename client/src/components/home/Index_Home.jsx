@@ -15,7 +15,7 @@ import './indexHome.scss';
 const IndexHome = ({ loadPosts, index: { startIndex, endIndex }, isLoading}) => {
 
   useEffect(() => {
-    if(startIndex === 0) loadPosts({ startIndex, endIndex });
+    loadPosts({ startIndex, endIndex });
   }, []);
 
 
@@ -27,7 +27,6 @@ const IndexHome = ({ loadPosts, index: { startIndex, endIndex }, isLoading}) => 
         <div className='col'>
           <Title title='Welcome' />
           <Messages />
-          {console.log('render')}
           <div className='load-more' onClick={onClick}>
             <CustomButton value='Load more' isLoading={isLoading} isClass='inverted'/>
           </div>

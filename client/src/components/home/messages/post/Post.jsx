@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Like from './like/Like';
+
 import './post.scss'
 
 const Post = ({ img, post, name }) => {
@@ -15,6 +17,9 @@ const Post = ({ img, post, name }) => {
         <div className='col-8'>
           <div className='body'>
             <p className='mb-0 p-2'>{post}</p>
+            <div className='like'>
+              <Like />
+            </div>
           </div>
         </div>
       </div>

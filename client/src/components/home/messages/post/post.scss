@@ -30,6 +30,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    .like {
+      position: absolute;
+      right: 0px;
+      bottom: 2px;
+    }
   }
 }
 

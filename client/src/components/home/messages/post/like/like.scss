@@ -1,0 +1,18 @@
+@import '../../../../../index.scss';
+
+
+.like {
+  display: flex;
+  justify-content: center;
+
+  i {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 10px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
