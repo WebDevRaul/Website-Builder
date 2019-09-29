@@ -15,8 +15,8 @@ import './indexHome.scss';
 const IndexHome = ({ loadPosts, index: { startIndex, endIndex }, isLoading}) => {
 
   useEffect(() => {
-    loadPosts({ startIndex, endIndex });
-  }, []);
+    if(startIndex === 0) loadPosts({ startIndex, endIndex });
+  },[]);
 
 
   const onClick = () => { if(!isLoading) loadPosts({ startIndex: startIndex + 4, endIndex: endIndex + 4 }) };

@@ -19,7 +19,7 @@ const Post = ({ img, post, name, like }) => {
           <div className='body'>
             <p className='mb-0 p-2'>{post}</p>
             <div className='like'>
-              <Like isUser={false} like={like} />
+              <Like like={like} />
             </div>
           </div>
         </div>
