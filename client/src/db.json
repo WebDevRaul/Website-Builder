@@ -28,7 +28,12 @@
       "email":"JonSnow@gmail.com",
       "id": "1a",
       "post": "Lorem ipsum dolor sit amet",
-      "position": 1
+      "position": 1,
+      "like": [
+        "liamarie@gmail.com",
+        "marcusaurelius@gmail.com",
+        "bricejohnson@gmail.com"
+      ]
     },
     {
       "user_id": "5",
@@ -36,7 +41,8 @@
       "email":"JohnDoe@gmail.com",
       "id": "5a",
       "post": "Lorem ipsum dolor sit amet consectetur",
-      "position": 5
+      "position": 5,
+      "like": []
     },
     {
       "user_id": "3",
@@ -44,7 +50,12 @@
       "email":"marcusaurelius@gmail.com",
       "id": "3a",
       "post": "Lorem ipsum dolor sit amet",
-      "position": 3
+      "position": 3,
+      "like": [
+        "liamarie@gmail.com",
+        "JonSnow@gmail.com",
+        "bricejohnson@gmail.com"
+      ]
     },
     {
       "user_id": "2",
@@ -52,7 +63,11 @@
       "email":"liamarie@gmail.com",
       "id": "2a",
       "post": "Lorem ipsum dolor",
-      "position": 2
+      "position": 2,
+      "like": [
+        "JonSnow@gmail.com",
+        "bricejohnson@gmail.com"
+      ]
     },
     {
       "user_id": "4",
@@ -60,7 +75,8 @@
       "email":"bricejohnson@gmail.com",
       "id": "4a",
       "post": "Lorem ipsum dolor sit amet  ipsum dolor",
-      "position": 4
+      "position": 4,
+      "like": []
     },
     {
       "user_id": "6",
@@ -68,7 +84,8 @@
       "email":"JonSnow@gmail.com",
       "id": "6a",
       "post": "Lorem ipsum dolor sit amet",
-      "position": 6
+      "position": 6,
+      "like": []
     },
     {
       "user_id": "7",
@@ -76,7 +93,8 @@
       "email":"JohnDoe@gmail.com",
       "id": "7a",
       "post": "Lorem ipsum dolor sit amet consectetur",
-      "position": 7
+      "position": 7,
+      "like": []
     },
     {
       "user_id": "8",
@@ -84,7 +102,8 @@
       "email":"marcusaurelius@gmail.com",
       "id": "8a",
       "post": "Lorem ipsum dolor sit amet",
-      "position": 8
+      "position": 8,
+      "like": []
     },
     {
       "user_id": "9",
@@ -92,7 +111,8 @@
       "email":"liamarie@gmail.com",
       "id": "9a",
       "post": "Lorem ipsum dolor",
-      "position": 9
+      "position": 9,
+      "like": []
     },
     {
       "user_id": "10",
@@ -100,7 +120,8 @@
       "email":"bricejohnson@gmail.com",
       "id": "10a",
       "post": "Lorem ipsum dolor sit amet  ipsum dolor",
-      "position": 10
+      "position": 10,
+      "like": []
     }
   ]
 }

@@ -4,16 +4,17 @@ import classnames from 'classnames';
 
 import './like.scss';
 
-const Like = ({ isUser }) => {
+const Like = ({ isUser, like }) => {
   return (
     <div className='like'>
-      10 <i className={classnames('far fa-heart', {'fas' : isUser})}></i>
+      {like.length} <i className={classnames('far fa-heart', {'fas' : isUser})}></i>
     </div>
   )
 }
 
 Like.propTypes = {
-  isUser: PropTypes.bool.isRequired
+  isUser: PropTypes.bool.isRequired,
+  like: PropTypes.array.isRequired
 }
 
 export default Like;

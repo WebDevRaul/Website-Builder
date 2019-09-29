@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Like from './like/Like';
 
 import './post.scss'
 
-const Post = ({ img, post, name }) => {
+const Post = ({ img, post, name, like }) => {
   return (
     <div className='post'>
       <div className='row no-gutters'>
@@ -18,13 +19,20 @@ const Post = ({ img, post, name }) => {
           <div className='body'>
             <p className='mb-0 p-2'>{post}</p>
             <div className='like'>
-              <Like isUser={false} />
+              <Like isUser={false} like={like} />
             </div>
           </div>
         </div>
       </div>
     </div>
   )
+}
+
+Post.propTypes = {
+  img: PropTypes.string.isRequired,
+  post: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  like: PropTypes.array.isRequired
 }
 
 export default Post;
