@@ -18,7 +18,7 @@ const Post = ({ img, post, name }) => {
           <div className='body'>
             <p className='mb-0 p-2'>{post}</p>
             <div className='like'>
-              <Like />
+              <Like isUser={false} />
             </div>
           </div>
         </div>
