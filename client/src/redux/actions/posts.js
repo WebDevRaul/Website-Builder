@@ -23,6 +23,26 @@ export const loadPosts = index => dispatch => {
   }, 3000);
 }
 
+export const loadMorePosts = index => dispatch => {
+  const { startIndex, endIndex } = index;
+  dispatch({ type: LOADING.TRUE });
+
+  dispatch({ 
+    type: POST.LOAD_MORE,
+    payload: {
+      posts: posts.slice(startIndex, endIndex),
+      startIndex,
+      endIndex
+    }
+   });
+  
+  setTimeout(() => {
+    dispatch({ type: LOADING.FALSE })
+  }, 3000);
+}
+
+
+
 export const likePost = data => dispatch => {
   dispatch({
     type: POST.LIKE,

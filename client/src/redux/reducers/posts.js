@@ -3,8 +3,8 @@ import { POST } from '../actions/types';
 const INITIAL_STATE = {
   posts: [],
   index: {
-    startIndex: 0,
-    endIndex: 4
+    startIndex: null,
+    endIndex: null
   }
 };
 
@@ -13,6 +13,12 @@ const posts = (state=INITIAL_STATE, action) => {
 
   switch(type) {
     case POST.LOAD:
+      return {
+        ...state,
+        posts: payload.posts,
+        index: { startIndex: payload.startIndex, endIndex: payload.endIndex }
+      }
+    case POST.LOAD_MORE:
       return {
         ...state,
         posts: [...state.posts, ...payload.posts],

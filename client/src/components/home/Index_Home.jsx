@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { loadPosts } from '../../redux/actions/posts';
+import { loadPosts, loadMorePosts } from '../../redux/actions/posts';
 import { createStructuredSelector } from 'reselect';
 import { select_index, select_posts_length } from '../../redux/selectors/posts';
 import { select_loading } from '../../redux/selectors/loading';
@@ -12,14 +12,15 @@ import CustomButton from '../common/button/Custom_Button';
 
 import './indexHome.scss';
 
-const IndexHome = ({ loadPosts, index: { startIndex, endIndex }, isLoading, length }) => {
+const IndexHome = ({ loadPosts, loadMorePosts, index: { startIndex, endIndex }, isLoading, length }) => {
 
   useEffect(() => {
-    if(length <= startIndex) loadPosts({ startIndex, endIndex });
+    if(length === 0) return loadPosts({ startIndex: 0, endIndex: 4 });
+    loadPosts({ startIndex: 0, endIndex: length })
   },[]);
 
 
-  const onClick = () => { if(!isLoading) loadPosts({ startIndex: startIndex + 4, endIndex: endIndex + 4 }) };
+  const onClick = () => { if(!isLoading) loadMorePosts({ startIndex: startIndex + 4, endIndex: endIndex + 4 }) };
 
   return(
     <div className='home'>
@@ -39,8 +40,8 @@ const IndexHome = ({ loadPosts, index: { startIndex, endIndex }, isLoading, leng
 IndexHome.propTypes = {
   loadPosts: PropTypes.func.isRequired,
   index: PropTypes.object.isRequired,
-  isLoading: PropTypes.bool.isRequired, 
-  length: PropTypes.number.isRequired
+  isLoading: PropTypes.bool.isRequired,
+  loadMorePosts: PropTypes.func.isRequired
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -49,4 +50,4 @@ const mapStateToProps = createStructuredSelector({
   length: select_posts_length
 })
 
-export default connect(mapStateToProps, { loadPosts })(IndexHome);
+export default connect(mapStateToProps, { loadPosts, loadMorePosts })(IndexHome);
