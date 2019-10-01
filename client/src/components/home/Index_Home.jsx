@@ -31,6 +31,12 @@ const IndexHome = ({ loadPosts, loadMorePosts, index: { startIndex, endIndex }, 
           <div className='load-more' onClick={onClick}>
             <CustomButton value='Load more' isLoading={isLoading} isClass='inverted'/>
           </div>
+          { length > 4 
+            ? <div className='load-less'>
+                <CustomButton value='Show less' isLoading={isLoading} isClass='inverted' />
+              </div>
+            : null 
+          }
         </div>
       </div>
     </div>
@@ -41,7 +47,8 @@ IndexHome.propTypes = {
   loadPosts: PropTypes.func.isRequired,
   index: PropTypes.object.isRequired,
   isLoading: PropTypes.bool.isRequired,
-  loadMorePosts: PropTypes.func.isRequired
+  loadMorePosts: PropTypes.func.isRequired,
+  length: PropTypes.number.isRequired
 };
 
 const mapStateToProps = createStructuredSelector({
