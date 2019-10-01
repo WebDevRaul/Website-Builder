@@ -2,17 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { connect } from 'react-redux';
+import { likePost, unlikePost } from '../../../../../redux/actions/posts';
 import { createStructuredSelector } from 'reselect';
-import { select_email_user } from '../../../../../redux/selectors/account';
+import { select_user_id } from '../../../../../redux/selectors/account';
 
 import './like.scss';
 
-const Like = ({ email, like }) => {
+const Like = ({ user_id, like, id, likePost, unlikePost }) => {
 
-  const contains = like.includes(email);
+  const contains = like.includes(user_id);
   
   const onClick = () => {
-
+    const data = { id, user_id }
+    if(!contains) return likePost(data);
+    unlikePost(data);
   }
 
   return (
@@ -23,12 +26,14 @@ const Like = ({ email, like }) => {
 }
 
 Like.propTypes = {
-  email: PropTypes.string,
-  like: PropTypes.array.isRequired
+  user_id: PropTypes.string,
+  like: PropTypes.array.isRequired,
+  likePost: PropTypes.func.isRequired,
+  unlikePost: PropTypes.func.isRequired
 };
 
 const mapStateToProps = createStructuredSelector({
-  email: select_email_user
+  user_id: select_user_id
 })
 
-export default connect(mapStateToProps, {  })(Like);
+export default connect(mapStateToProps, { likePost, unlikePost })(Like);

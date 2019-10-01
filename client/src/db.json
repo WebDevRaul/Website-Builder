@@ -30,19 +30,24 @@
       "post": "Lorem ipsum dolor sit amet",
       "position": 1,
       "like": [
-        "liamarie@gmail.com",
-        "marcusaurelius@gmail.com",
-        "bricejohnson@gmail.com"
+        "2",
+        "4",
+        "6",
+        "9"
       ]
     },
     {
-      "user_id": "5",
+      "user_id": "4",
       "name":"John Doe",
       "email":"JohnDoe@gmail.com",
-      "id": "5a",
+      "id": "4a",
       "post": "Lorem ipsum dolor sit amet consectetur",
-      "position": 5,
-      "like": []
+      "position": 4,
+      "like": [
+        "1",
+        "4",
+        "3"
+      ]
     },
     {
       "user_id": "3",
@@ -52,9 +57,10 @@
       "post": "Lorem ipsum dolor sit amet",
       "position": 3,
       "like": [
-        "liamarie@gmail.com",
-        "JonSnow@gmail.com",
-        "bricejohnson@gmail.com"
+        "1",
+        "2",
+        "4",
+        "5"
       ]
     },
     {
@@ -65,17 +71,17 @@
       "post": "Lorem ipsum dolor",
       "position": 2,
       "like": [
-        "JonSnow@gmail.com",
-        "bricejohnson@gmail.com"
+        "1",
+        "3"
       ]
     },
     {
-      "user_id": "4",
+      "user_id": "5",
       "name":"brice johnson",
       "email":"bricejohnson@gmail.com",
-      "id": "4a",
+      "id": "5a",
       "post": "Lorem ipsum dolor sit amet  ipsum dolor",
-      "position": 4,
+      "position": 5,
       "like": []
     },
     {

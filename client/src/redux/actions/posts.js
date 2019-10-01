@@ -22,3 +22,18 @@ export const loadPosts = index => dispatch => {
     dispatch({ type: LOADING.FALSE })
   }, 3000);
 }
+
+export const likePost = data => dispatch => {
+  dispatch({
+    type: POST.LIKE,
+    payload: data
+  })
+}
+
+export const unlikePost = data => dispatch => {
+  console.log('unlike action')
+  dispatch({
+    type: POST.UNLIKE,
+    payload: data
+  })
+}

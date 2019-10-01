@@ -12,9 +12,9 @@ export const select_account_user = createSelector(
   [select_account_state],
   account => account.user
 );
-export const select_email_user = createSelector(
+export const select_user_id = createSelector(
   [select_account_state],
-  account => account.user.email
+  account => account.user.id
 );
 
 export const select_account_isAuth = createSelector(

@@ -9,12 +9,30 @@ const INITIAL_STATE = {
 };
 
 const posts = (state=INITIAL_STATE, action) => {
-  switch(action.type) {
+  const { type, payload } = action;
+
+  switch(type) {
     case POST.LOAD:
       return {
         ...state,
-        posts: [...state.posts, ...action.payload.posts],
-        index: { startIndex: action.payload.startIndex, endIndex: action.payload.endIndex }
+        posts: [...state.posts, ...payload.posts],
+        index: { startIndex: payload.startIndex, endIndex: payload.endIndex }
+      }
+    case POST.LIKE:
+      return {
+        ...state,
+        posts: [...state.posts.map(post => post.id === payload.id 
+          ? { ...post, like: [...post.like, payload.user_id] } 
+          : post
+          )]
+      }
+    case POST.UNLIKE:
+      return {
+        ...state,
+        posts: [...state.posts.map(post => post.id === payload.id 
+          ? { ...post, like: {...post.like.filter(i => i.id !== payload.user_id)} } 
+          : post
+          )]
       }
     default:
       return state;
