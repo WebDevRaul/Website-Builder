@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { select_account_isAuth } from '../../redux/selectors/account';
@@ -18,7 +18,7 @@ import Alert from '../common/alert/Alert';
 
 import './indexSignIn.scss';
 
-const IndexSignIn = ({ signIn, isAuth, history }) => {
+const IndexSignIn = ({ signIn, isAuth }) => {
   const [state, setState] = useState({ 
     email: '',
     password: ''
@@ -28,11 +28,6 @@ const IndexSignIn = ({ signIn, isAuth, history }) => {
     password: undefined
   });
   const { email, password } = state;
-
-  // Redirect on Sign in
-  useEffect(() => {
-    if(isAuth) return history.push('/dashboard');
-  }, [isAuth, history]);
 
   const onChange = e => {
     setState({...state , [e.target.name]: e.target.value })
@@ -58,6 +53,9 @@ const IndexSignIn = ({ signIn, isAuth, history }) => {
       signIn(data)
     }
   }
+
+  // Redirect on Dashboard
+  if(isAuth) return <Redirect to='/dashboard' />;
 
   return (
     <div className='sign-in'>
@@ -105,4 +103,4 @@ const mapStateToProps = createStructuredSelector({
   isAuth: select_account_isAuth,
 });
 
-export default connect(mapStateToProps, { signIn })(withRouter(IndexSignIn));
+export default connect(mapStateToProps, { signIn })(IndexSignIn);

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loadPosts } from '../../redux/actions/posts';
 import { createStructuredSelector } from 'reselect';
-import { select_index } from '../../redux/selectors/posts';
+import { select_index, select_posts_length } from '../../redux/selectors/posts';
 import { select_loading } from '../../redux/selectors/loading';
 
 import Title from '../common/title/Title';
@@ -12,10 +12,10 @@ import CustomButton from '../common/button/Custom_Button';
 
 import './indexHome.scss';
 
-const IndexHome = ({ loadPosts, index: { startIndex, endIndex }, isLoading}) => {
+const IndexHome = ({ loadPosts, index: { startIndex, endIndex }, isLoading, length }) => {
 
   useEffect(() => {
-    if(startIndex === 0) loadPosts({ startIndex, endIndex });
+    if(length <= startIndex) loadPosts({ startIndex, endIndex });
   },[]);
 
 
@@ -39,12 +39,14 @@ const IndexHome = ({ loadPosts, index: { startIndex, endIndex }, isLoading}) => 
 IndexHome.propTypes = {
   loadPosts: PropTypes.func.isRequired,
   index: PropTypes.object.isRequired,
-  isLoading: PropTypes.bool.isRequired
+  isLoading: PropTypes.bool.isRequired, 
+  length: PropTypes.number.isRequired
 };
 
 const mapStateToProps = createStructuredSelector({
   index: select_index,
-  isLoading: select_loading
+  isLoading: select_loading,
+  length: select_posts_length
 })
 
 export default connect(mapStateToProps, { loadPosts })(IndexHome);
