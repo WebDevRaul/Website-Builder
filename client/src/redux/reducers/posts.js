@@ -30,7 +30,7 @@ const posts = (state=INITIAL_STATE, action) => {
       return {
         ...state,
         posts: [...state.posts.map(post => post.id === payload.id 
-          ? { ...post, like: {...post.like.filter(i => i.id !== payload.user_id)} } 
+          ? { ...post, like: [...post.like.filter(i => i !== payload.user_id)] } 
           : post
           )]
       }

@@ -13,7 +13,6 @@ const Post = ({ img, id, post, name, like }) => {
           <div className='header'>
             <img src={img} alt='portrait' />
             <div className='name'>{name}</div>
-            {console.log(name)}
           </div>
         </div>
         <div className='col-8'>

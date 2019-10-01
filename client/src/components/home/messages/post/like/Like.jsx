@@ -10,11 +10,11 @@ import './like.scss';
 
 const Like = ({ user_id, like, id, likePost, unlikePost }) => {
 
-  const contains = like.includes(user_id);
+  const contains = Object.values(like).includes(user_id)
   
   const onClick = () => {
     const data = { id, user_id }
-    if(!contains) return likePost(data);
+    if(!contains) return likePost(data)
     unlikePost(data);
   }
 

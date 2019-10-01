@@ -31,7 +31,6 @@ export const likePost = data => dispatch => {
 }
 
 export const unlikePost = data => dispatch => {
-  console.log('unlike action')
   dispatch({
     type: POST.UNLIKE,
     payload: data
