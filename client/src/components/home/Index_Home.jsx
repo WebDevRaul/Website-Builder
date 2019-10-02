@@ -44,7 +44,7 @@ const IndexHome = ({
             <div className='load-more' onClick={onLoadMore}>
               <CustomButton value='Load more' isLoading={isLoading} isClass='inverted'/>
             </div>
-            { length > 4 
+            { length > 4 && !showLess
               ? <div className='show-less' onClick={onShowLess}>
                   <CustomButton value='Show less' isLoading={isLoading} isClass='inverted' />
                 </div>
