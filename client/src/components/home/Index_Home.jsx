@@ -20,7 +20,9 @@ const IndexHome = ({ loadPosts, loadMorePosts, index: { startIndex, endIndex }, 
   },[]);
 
 
-  const onClick = () => { if(!isLoading) loadMorePosts({ startIndex: startIndex + 4, endIndex: endIndex + 4 }) };
+  const onLoadMore = () => { if(!isLoading) loadMorePosts({ startIndex: startIndex + 4, endIndex: endIndex + 4 }) };
+
+  const onShowLess = () => {  }
 
   return(
     <div className='home'>
@@ -28,15 +30,17 @@ const IndexHome = ({ loadPosts, loadMorePosts, index: { startIndex, endIndex }, 
         <div className='col'>
           <Title title='Welcome' />
           <Messages />
-          <div className='load-more' onClick={onClick}>
-            <CustomButton value='Load more' isLoading={isLoading} isClass='inverted'/>
+          <div className='btn-wrapper'>
+            <div className='load-more' onClick={onLoadMore}>
+              <CustomButton value='Load more' isLoading={isLoading} isClass='inverted'/>
+            </div>
+            { length > 4 
+              ? <div className='show-less' onClick={onShowLess}>
+                  <CustomButton value='Show less' isLoading={isLoading} isClass='inverted' />
+                </div>
+              : null 
+            }
           </div>
-          { length > 4 
-            ? <div className='load-less'>
-                <CustomButton value='Show less' isLoading={isLoading} isClass='inverted' />
-              </div>
-            : null 
-          }
         </div>
       </div>
     </div>

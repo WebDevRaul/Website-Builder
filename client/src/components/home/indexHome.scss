@@ -16,13 +16,17 @@
     }
   }
 
-  .load-more {
-    display: flex;
-    margin: 20px 0;
+  .btn-wrapper {
 
-    .custom-button {
-      width: 80%;
-      margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+
+    .load-more {
+      margin: 20px 0;
+    }
+
+    .show-less {
+      margin: 20px 0;
     }
   }
 }
