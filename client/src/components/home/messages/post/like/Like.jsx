@@ -13,8 +13,9 @@ const Like = ({ user_id, like, id, likePost, unlikePost }) => {
   const contains = Object.values(like).includes(user_id)
   
   const onClick = () => {
-    const data = { id, user_id }
-    if(!contains) return likePost(data)
+    const data = { id, user_id };
+    if(!!!user_id) return null;
+    if(!contains) return likePost(data);
     unlikePost(data);
   }
 
