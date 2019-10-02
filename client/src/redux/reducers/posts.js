@@ -2,6 +2,7 @@ import { POST } from '../actions/types';
 
 const INITIAL_STATE = {
   posts: [],
+  showLess: false,
   index: {
     startIndex: null,
     endIndex: null
@@ -23,6 +24,11 @@ const posts = (state=INITIAL_STATE, action) => {
         ...state,
         posts: [...state.posts, ...payload.posts],
         index: { startIndex: payload.startIndex, endIndex: payload.endIndex }
+      }
+    case POST.SHOW_LESS:
+      return {
+        ...state,
+        showLess: payload
       }
     case POST.LIKE:
       return {

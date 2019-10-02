@@ -41,6 +41,13 @@ export const loadMorePosts = index => dispatch => {
   }, 3000);
 }
 
+export const showLessPosts = data => dispatch => {
+  dispatch({
+    type: POST.SHOW_LESS,
+    payload: data
+  })
+}
+
 
 
 export const likePost = data => dispatch => {

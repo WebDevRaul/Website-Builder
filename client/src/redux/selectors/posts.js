@@ -17,3 +17,8 @@ export const select_posts_length = createSelector(
   [select_posts_state],
   posts => posts.posts.length
 );
+
+export const select_show_less = createSelector(
+  [select_posts_state],
+  posts => posts.showLess
+);
