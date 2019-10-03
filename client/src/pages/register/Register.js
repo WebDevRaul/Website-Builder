@@ -3,11 +3,7 @@ import IndexRegister from '../../components/register/Index_Register';
 
 
 const Register = () => (
-  <div className='row no-gutters'>
-    <div className='col'>
-      <IndexRegister />
-    </div>
-  </div>
+  <IndexRegister />
 );
 
 export default Register;

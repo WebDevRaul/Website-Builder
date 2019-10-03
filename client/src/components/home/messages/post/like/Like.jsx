@@ -29,6 +29,7 @@ const Like = ({ user_id, like, id, likePost, unlikePost }) => {
 Like.propTypes = {
   user_id: PropTypes.string,
   like: PropTypes.array.isRequired,
+  id: PropTypes.string.isRequired,
   likePost: PropTypes.func.isRequired,
   unlikePost: PropTypes.func.isRequired
 };

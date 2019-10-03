@@ -33,7 +33,8 @@ Input.propTypes = {
   onChange: PropTypes.func.isRequired,
   onFocus: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired,
+  error: PropTypes.string
 }
 
 export default Input;

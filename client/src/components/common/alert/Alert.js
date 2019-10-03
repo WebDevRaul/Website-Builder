@@ -26,7 +26,8 @@ const Alert = ({ show, alert, text }) => {
 
 Alert.propTypes = {
   show: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired
+  text: PropTypes.string.isRequired,
+  alert: PropTypes.func.isRequired
 };
 
 const mapStateToProps = createStructuredSelector({
